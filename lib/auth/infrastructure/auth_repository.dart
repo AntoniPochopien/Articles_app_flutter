@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 
 class AuthRepository implements IAuthRepository {
   @override
-  Future<Either<Failure, Unit>> checkLogin(String login) {
+  Future<Either<Failure, Unit>> checkLogin(String login) async {
     // TODO: implement checkLogin
     throw UnimplementedError();
   }
