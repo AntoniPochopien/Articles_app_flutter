@@ -1,3 +1,12 @@
 {
-    "@@locale": "en"
+    "@@locale": "en",
+    "login":"Login",
+    "loginCannotBeEmpty":"Login cannot be empty",
+    "loginIsTooShort":"Login is too short",
+    "password":"Password",
+    "passwordCannotBeEmpty":"Password cannot be empty",
+    "passwordIsTooShort":"Password is too short",
+    "register":"Register",
+    "repeatPassword":"Repeat password",
+    "passwordsMustBeTheSame":"Passwords must be the same"
 }

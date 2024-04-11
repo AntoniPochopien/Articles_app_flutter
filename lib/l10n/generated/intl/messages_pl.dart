@@ -21,5 +21,20 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pl';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "login": MessageLookupByLibrary.simpleMessage("zaloguj się"),
+        "loginCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Login nie może być pusty"),
+        "loginIsTooShort":
+            MessageLookupByLibrary.simpleMessage("Login jest za krótki"),
+        "password": MessageLookupByLibrary.simpleMessage("Hasło"),
+        "passwordCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Hasło nie może być puste"),
+        "passwordIsTooShort":
+            MessageLookupByLibrary.simpleMessage("Hasło jest za krótkie"),
+        "passwordsMustBeTheSame":
+            MessageLookupByLibrary.simpleMessage("Hasła muszą być takie same"),
+        "register": MessageLookupByLibrary.simpleMessage("Zarejestruj się"),
+        "repeatPassword": MessageLookupByLibrary.simpleMessage("Powtórz hasło")
+      };
 }

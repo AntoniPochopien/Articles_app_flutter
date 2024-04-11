@@ -49,6 +49,96 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login cannot be empty`
+  String get loginCannotBeEmpty {
+    return Intl.message(
+      'Login cannot be empty',
+      name: 'loginCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login is too short`
+  String get loginIsTooShort {
+    return Intl.message(
+      'Login is too short',
+      name: 'loginIsTooShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password cannot be empty`
+  String get passwordCannotBeEmpty {
+    return Intl.message(
+      'Password cannot be empty',
+      name: 'passwordCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password is too short`
+  String get passwordIsTooShort {
+    return Intl.message(
+      'Password is too short',
+      name: 'passwordIsTooShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message(
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeat password`
+  String get repeatPassword {
+    return Intl.message(
+      'Repeat password',
+      name: 'repeatPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords must be the same`
+  String get passwordsMustBeTheSame {
+    return Intl.message(
+      'Passwords must be the same',
+      name: 'passwordsMustBeTheSame',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

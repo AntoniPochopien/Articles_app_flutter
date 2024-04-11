@@ -1,3 +1,12 @@
 {
-    "@@locale": "pl"
+    "@@locale": "pl",
+    "login":"zaloguj się",
+    "loginCannotBeEmpty":"Login nie może być pusty",
+    "loginIsTooShort":"Login jest za krótki",
+    "password":"Hasło",
+    "passwordCannotBeEmpty":"Hasło nie może być puste",
+    "passwordIsTooShort":"Hasło jest za krótkie",
+    "register":"Zarejestruj się",
+    "repeatPassword":"Powtórz hasło",
+    "passwordsMustBeTheSame":"Hasła muszą być takie same"
 }

@@ -11,13 +11,13 @@ class AppStartupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (context) => StartupCubit(),
+        create: (context) => StartupCubit()..init(),
         child: BlocListener<StartupCubit, StartupState>(
+          listenWhen: (previous, current) => true,
           listener: (context, state) {
             state.mapOrNull(
-                authorized: (value) =>
-                    context.pushRoute(const DashboardRoute()),
-                unauthorized: (value) => context.pushRoute(const AuthRoute()));
+                authorized: (_) => context.pushRoute(const DashboardRoute()),
+                unauthorized: (_) => context.pushRoute(const AuthRoute()));
           },
           child: const Scaffold(),
         ));
