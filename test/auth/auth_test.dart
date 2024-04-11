@@ -1,6 +1,5 @@
 import 'package:articles_app_flutter/auth/domain/i_auth_repository.dart';
 import 'package:articles_app_flutter/common/models/failure.dart';
-import 'package:articles_app_flutter/common/widgets/articles_input.dart';
 import 'package:articles_app_flutter/common/widgets/button.dart';
 import 'package:articles_app_flutter/di.dart';
 import 'package:articles_app_flutter/l10n/l10n.dart';
