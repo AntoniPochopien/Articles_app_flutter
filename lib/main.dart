@@ -1,10 +1,11 @@
 import 'package:articles_app_flutter/di.dart';
+import 'package:articles_app_flutter/l10n/restart_app.dart';
 import 'package:articles_app_flutter/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   diInit();
-  runApp(const ArticlesApp());
+  runApp(const RestartApp(ArticlesApp()));
 }
 
 class ArticlesApp extends StatelessWidget {
