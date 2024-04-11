@@ -19,6 +19,7 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() registerSuccess,
     required TResult Function() authorized,
     required TResult Function() loading,
     required TResult Function(Failure reason) error,
@@ -27,6 +28,7 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? registerSuccess,
     TResult? Function()? authorized,
     TResult? Function()? loading,
     TResult? Function(Failure reason)? error,
@@ -35,6 +37,7 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? registerSuccess,
     TResult Function()? authorized,
     TResult Function()? loading,
     TResult Function(Failure reason)? error,
@@ -44,6 +47,7 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
     required TResult Function(_Authorized value) authorized,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
@@ -52,6 +56,7 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
     TResult? Function(_Authorized value)? authorized,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
@@ -60,6 +65,7 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
     TResult Function(_Authorized value)? authorized,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
@@ -124,6 +130,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() registerSuccess,
     required TResult Function() authorized,
     required TResult Function() loading,
     required TResult Function(Failure reason) error,
@@ -135,6 +142,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? registerSuccess,
     TResult? Function()? authorized,
     TResult? Function()? loading,
     TResult? Function(Failure reason)? error,
@@ -146,6 +154,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? registerSuccess,
     TResult Function()? authorized,
     TResult Function()? loading,
     TResult Function(Failure reason)? error,
@@ -161,6 +170,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
     required TResult Function(_Authorized value) authorized,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
@@ -172,6 +182,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
     TResult? Function(_Authorized value)? authorized,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
@@ -183,6 +194,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
     TResult Function(_Authorized value)? authorized,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
@@ -197,6 +209,126 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements AuthState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$RegisterSuccessImplCopyWith<$Res> {
+  factory _$$RegisterSuccessImplCopyWith(_$RegisterSuccessImpl value,
+          $Res Function(_$RegisterSuccessImpl) then) =
+      __$$RegisterSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RegisterSuccessImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$RegisterSuccessImpl>
+    implements _$$RegisterSuccessImplCopyWith<$Res> {
+  __$$RegisterSuccessImplCopyWithImpl(
+      _$RegisterSuccessImpl _value, $Res Function(_$RegisterSuccessImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RegisterSuccessImpl implements _RegisterSuccess {
+  const _$RegisterSuccessImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.registerSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RegisterSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerSuccess,
+    required TResult Function() authorized,
+    required TResult Function() loading,
+    required TResult Function(Failure reason) error,
+  }) {
+    return registerSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerSuccess,
+    TResult? Function()? authorized,
+    TResult? Function()? loading,
+    TResult? Function(Failure reason)? error,
+  }) {
+    return registerSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerSuccess,
+    TResult Function()? authorized,
+    TResult Function()? loading,
+    TResult Function(Failure reason)? error,
+    required TResult orElse(),
+  }) {
+    if (registerSuccess != null) {
+      return registerSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_Authorized value) authorized,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+  }) {
+    return registerSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_Authorized value)? authorized,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Error value)? error,
+  }) {
+    return registerSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_Authorized value)? authorized,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (registerSuccess != null) {
+      return registerSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegisterSuccess implements AuthState {
+  const factory _RegisterSuccess() = _$RegisterSuccessImpl;
 }
 
 /// @nodoc
@@ -238,6 +370,7 @@ class _$AuthorizedImpl implements _Authorized {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() registerSuccess,
     required TResult Function() authorized,
     required TResult Function() loading,
     required TResult Function(Failure reason) error,
@@ -249,6 +382,7 @@ class _$AuthorizedImpl implements _Authorized {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? registerSuccess,
     TResult? Function()? authorized,
     TResult? Function()? loading,
     TResult? Function(Failure reason)? error,
@@ -260,6 +394,7 @@ class _$AuthorizedImpl implements _Authorized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? registerSuccess,
     TResult Function()? authorized,
     TResult Function()? loading,
     TResult Function(Failure reason)? error,
@@ -275,6 +410,7 @@ class _$AuthorizedImpl implements _Authorized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
     required TResult Function(_Authorized value) authorized,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
@@ -286,6 +422,7 @@ class _$AuthorizedImpl implements _Authorized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
     TResult? Function(_Authorized value)? authorized,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
@@ -297,6 +434,7 @@ class _$AuthorizedImpl implements _Authorized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
     TResult Function(_Authorized value)? authorized,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
@@ -352,6 +490,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() registerSuccess,
     required TResult Function() authorized,
     required TResult Function() loading,
     required TResult Function(Failure reason) error,
@@ -363,6 +502,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? registerSuccess,
     TResult? Function()? authorized,
     TResult? Function()? loading,
     TResult? Function(Failure reason)? error,
@@ -374,6 +514,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? registerSuccess,
     TResult Function()? authorized,
     TResult Function()? loading,
     TResult Function(Failure reason)? error,
@@ -389,6 +530,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
     required TResult Function(_Authorized value) authorized,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
@@ -400,6 +542,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
     TResult? Function(_Authorized value)? authorized,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
@@ -411,6 +554,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
     TResult Function(_Authorized value)? authorized,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
@@ -502,6 +646,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() registerSuccess,
     required TResult Function() authorized,
     required TResult Function() loading,
     required TResult Function(Failure reason) error,
@@ -513,6 +658,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? registerSuccess,
     TResult? Function()? authorized,
     TResult? Function()? loading,
     TResult? Function(Failure reason)? error,
@@ -524,6 +670,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? registerSuccess,
     TResult Function()? authorized,
     TResult Function()? loading,
     TResult Function(Failure reason)? error,
@@ -539,6 +686,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
     required TResult Function(_Authorized value) authorized,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
@@ -550,6 +698,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
     TResult? Function(_Authorized value)? authorized,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
@@ -561,6 +710,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
     TResult Function(_Authorized value)? authorized,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
