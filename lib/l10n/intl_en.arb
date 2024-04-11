@@ -8,5 +8,6 @@
     "passwordIsTooShort":"Password is too short",
     "register":"Register",
     "repeatPassword":"Repeat password",
-    "passwordsMustBeTheSame":"Passwords must be the same"
+    "passwordsMustBeTheSame":"Passwords must be the same",
+    "theLoginIsAlreadyTaken":"The login is already taken"
 }

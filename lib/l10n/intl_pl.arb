@@ -8,5 +8,6 @@
     "passwordIsTooShort":"Hasło jest za krótkie",
     "register":"Zarejestruj się",
     "repeatPassword":"Powtórz hasło",
-    "passwordsMustBeTheSame":"Hasła muszą być takie same"
+    "passwordsMustBeTheSame":"Hasła muszą być takie same",
+    "theLoginIsAlreadyTaken":"Login jest już zajęty"
 }

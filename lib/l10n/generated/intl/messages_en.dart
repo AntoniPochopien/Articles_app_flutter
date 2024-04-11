@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Passwords must be the same"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "repeatPassword":
-            MessageLookupByLibrary.simpleMessage("Repeat password")
+            MessageLookupByLibrary.simpleMessage("Repeat password"),
+        "theLoginIsAlreadyTaken":
+            MessageLookupByLibrary.simpleMessage("The login is already taken")
       };
 }

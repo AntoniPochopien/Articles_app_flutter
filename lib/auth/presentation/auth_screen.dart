@@ -1,8 +1,10 @@
 import 'package:articles_app_flutter/auth/application/cubit/auth_cubit.dart';
+import 'package:articles_app_flutter/auth/domain/i_auth_repository.dart';
 import 'package:articles_app_flutter/auth/presentation/pages/login_page.dart';
 import 'package:articles_app_flutter/auth/presentation/pages/register_page.dart';
 import 'package:articles_app_flutter/common/constants/dur.dart';
 import 'package:articles_app_flutter/common/widgets/articles_scaffold.dart';
+import 'package:articles_app_flutter/di.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +32,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AuthCubit(),
+      create: (context) => AuthCubit(getIt<IAuthRepository>()),
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) => ArticlesScaffold(
             body: Center(

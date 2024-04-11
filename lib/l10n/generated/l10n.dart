@@ -139,6 +139,16 @@ class S {
       args: [],
     );
   }
+
+  /// `The login is already taken`
+  String get theLoginIsAlreadyTaken {
+    return Intl.message(
+      'The login is already taken',
+      name: 'theLoginIsAlreadyTaken',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

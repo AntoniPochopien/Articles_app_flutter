@@ -29,13 +29,18 @@ class _RegisterPageState extends State<RegisterPage> {
             ArticlesInput(
               controller: _loginController,
               hint: T.login,
+              onChanged: (v) {
+                if (v.length >= 4) context.read<AuthCubit>().checkLogin(v);
+              },
               validator: (v) {
                 if (v.isEmpty) {
                   return T.loginCannotBeEmpty;
                 } else if (v.length < 4) {
                   return T.loginIsTooShort;
                 }
-                return null;
+                return state.mapOrNull(
+                    error: (value) => value.reason.mapOrNull(
+                        notUnique: (value) => T.theLoginIsAlreadyTaken));
               },
             ),
             ArticlesInput(
