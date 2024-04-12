@@ -1,6 +1,7 @@
 {
     "@@locale": "en",
     "login":"Login",
+    "username":"Username",
     "loginCannotBeEmpty":"Login cannot be empty",
     "loginIsTooShort":"Login is too short",
     "password":"Password",

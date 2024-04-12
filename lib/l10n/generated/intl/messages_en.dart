@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("Repeat password"),
         "theLoginIsAlreadyTaken":
-            MessageLookupByLibrary.simpleMessage("The login is already taken")
+            MessageLookupByLibrary.simpleMessage("The login is already taken"),
+        "username": MessageLookupByLibrary.simpleMessage("Username")
       };
 }

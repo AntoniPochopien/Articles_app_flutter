@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login cannot be empty`
   String get loginCannotBeEmpty {
     return Intl.message(

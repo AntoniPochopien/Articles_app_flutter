@@ -1,6 +1,7 @@
 {
     "@@locale": "pl",
-    "login":"zaloguj się",
+    "login":"Zaloguj się",
+    "username":"Nazwa użytkownika",
     "loginCannotBeEmpty":"Login nie może być pusty",
     "loginIsTooShort":"Login jest za krótki",
     "password":"Hasło",

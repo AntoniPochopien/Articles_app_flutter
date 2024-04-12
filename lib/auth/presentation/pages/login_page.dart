@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             ArticlesInput(
               controller: _usernameController,
-              hint: T.login,
+              hint: T.username,
               validator: (v) {
                 if (v.isEmpty) {
                   return T.loginCannotBeEmpty;

@@ -27,7 +27,7 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 ArticlesInput(
                   controller: _usernameController,
-                  hint: T.login,
+                  hint: T.username,
                   onChanged: (v) {
                     if (v.length >= 4) {
                       context.read<AuthCubit>().checkUsername(v);
