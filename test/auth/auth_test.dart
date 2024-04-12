@@ -36,7 +36,7 @@ void main() {
     await tester.tap(buttonFinder);
     await tester.pumpAndSettle();
     final loginInputFinder = find.widgetWithText(TextField, T.login);
-    when(authRepository.checkLogin('xxxx'))
+    when(authRepository.checkUsername('xxxx'))
         .thenAnswer((_) async => left(const Failure.notUnique()));
     await tester.enterText(loginInputFinder, 'xxxx');
     await tester.pumpAndSettle();

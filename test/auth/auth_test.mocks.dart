@@ -7,6 +7,7 @@ import 'dart:async' as _i4;
 
 import 'package:articles_app_flutter/auth/domain/i_auth_repository.dart' as _i3;
 import 'package:articles_app_flutter/common/models/failure.dart' as _i5;
+import 'package:articles_app_flutter/domain/user.dart' as _i6;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -42,8 +43,8 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>> login({
-    required String? login,
+  _i4.Future<_i2.Either<_i5.Failure, _i6.User>> login({
+    required String? username,
     required String? password,
   }) =>
       (super.noSuchMethod(
@@ -51,27 +52,27 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
           #login,
           [],
           {
-            #login: login,
+            #username: username,
             #password: password,
           },
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>.value(
-            _FakeEither_0<_i5.Failure, _i2.Unit>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i6.User>>.value(
+            _FakeEither_0<_i5.Failure, _i6.User>(
           this,
           Invocation.method(
             #login,
             [],
             {
-              #login: login,
+              #username: username,
               #password: password,
             },
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>);
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.User>>);
 
   @override
   _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>> register({
-    required String? login,
+    required String? username,
     required String? password,
   }) =>
       (super.noSuchMethod(
@@ -79,7 +80,7 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
           #register,
           [],
           {
-            #login: login,
+            #username: username,
             #password: password,
           },
         ),
@@ -90,7 +91,7 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
             #register,
             [],
             {
-              #login: login,
+              #username: username,
               #password: password,
             },
           ),
@@ -98,17 +99,17 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
       ) as _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>> checkLogin(String? login) =>
+  _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>> checkUsername(String? login) =>
       (super.noSuchMethod(
         Invocation.method(
-          #checkLogin,
+          #checkUsername,
           [login],
         ),
         returnValue: _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>.value(
             _FakeEither_0<_i5.Failure, _i2.Unit>(
           this,
           Invocation.method(
-            #checkLogin,
+            #checkUsername,
             [login],
           ),
         )),

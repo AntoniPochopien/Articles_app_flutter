@@ -14,7 +14,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final _loginController = TextEditingController();
+  final _usernameController = TextEditingController();
   final _pwdController = TextEditingController();
   final _repeatPwdController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -26,11 +26,11 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               children: [
                 ArticlesInput(
-                  controller: _loginController,
+                  controller: _usernameController,
                   hint: T.login,
                   onChanged: (v) {
                     if (v.length >= 4) {
-                      context.read<AuthCubit>().checkLogin(v);
+                      context.read<AuthCubit>().checkUsername(v);
                     }
                   },
                   validator: (v) {
@@ -75,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           orElse: () {
                             if (_formKey.currentState!.validate()) {
                               context.read<AuthCubit>().register(
-                                  login: _loginController.text,
+                                  username: _usernameController.text,
                                   password: _pwdController.text);
                             }
                             return null;

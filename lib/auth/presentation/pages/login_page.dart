@@ -14,7 +14,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _loginController = TextEditingController();
+  final _usernameController = TextEditingController();
   final _pwdController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
@@ -26,13 +26,11 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             ArticlesInput(
-              controller: _loginController,
+              controller: _usernameController,
               hint: T.login,
               validator: (v) {
                 if (v.isEmpty) {
                   return T.loginCannotBeEmpty;
-                } else if (v.length < 4) {
-                  return T.loginIsTooShort;
                 }
                 return null;
               },
@@ -54,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                       orElse: () {
                         if (_formKey.currentState!.validate()) {
                           context.read<AuthCubit>().login(
-                              login: _loginController.text,
+                              username: _usernameController.text,
                               password: _pwdController.text);
                         }
                         return null;

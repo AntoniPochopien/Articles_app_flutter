@@ -16,8 +16,8 @@ class AppStartupScreen extends StatelessWidget {
           listenWhen: (previous, current) => true,
           listener: (context, state) {
             state.mapOrNull(
-                authorized: (_) => context.pushRoute(const DashboardRoute()),
-                unauthorized: (_) => context.pushRoute(const AuthRoute()));
+                authorized: (_) => context.replaceRoute(const DashboardRoute()),
+                unauthorized: (_) => context.replaceRoute(const AuthRoute()));
           },
           child: const Scaffold(),
         ));

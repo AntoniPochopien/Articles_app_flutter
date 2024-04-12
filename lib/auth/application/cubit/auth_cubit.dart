@@ -12,20 +12,26 @@ class AuthCubit extends Cubit<AuthState> {
 
   final IAuthRepository _authRepository = getIt<IAuthRepository>();
 
-  void login({required String login, required String password}) {}
-
-  void register({required String login, required String password}) async {
-    const AuthState.loading();
+  void login({required String username, required String password}) async {
+    emit(const AuthState.loading());
     final response =
-        await _authRepository.register(login: login, password: password);
+        await _authRepository.login(username: username, password: password);
+    response.fold((l) => emit(AuthState.error(l)),
+        (r) => emit(const AuthState.authorized()));
+  }
+
+  void register({required String username, required String password}) async {
+    emit(const AuthState.loading());
+    final response =
+        await _authRepository.register(username: username, password: password);
     response.fold((l) => emit(AuthState.error(l)),
         (r) => emit(const AuthState.registerSuccess()));
   }
 
-  void checkLogin(String login) async {
-    const AuthState.loading();
-    final response = await _authRepository.checkLogin(login);
-    response.fold(
-        (l) => emit(AuthState.error(l)), (r) => const AuthState.initial());
+  void checkUsername(String username) async {
+    emit(const AuthState.loading());
+    final response = await _authRepository.checkUsername(username);
+    response.fold((l) => emit(AuthState.error(l)),
+        (r) => emit(const AuthState.initial()));
   }
 }
