@@ -70,21 +70,21 @@ class S {
     );
   }
 
-  /// `Login cannot be empty`
-  String get loginCannotBeEmpty {
+  /// `Username cannot be empty`
+  String get usernameCannotBeEmpty {
     return Intl.message(
-      'Login cannot be empty',
-      name: 'loginCannotBeEmpty',
+      'Username cannot be empty',
+      name: 'usernameCannotBeEmpty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Login is too short`
-  String get loginIsTooShort {
+  /// `Username is too short`
+  String get usernameIsTooShort {
     return Intl.message(
-      'Login is too short',
-      name: 'loginIsTooShort',
+      'Username is too short',
+      name: 'usernameIsTooShort',
       desc: '',
       args: [],
     );
@@ -150,11 +150,11 @@ class S {
     );
   }
 
-  /// `The login is already taken`
-  String get theLoginIsAlreadyTaken {
+  /// `The username is already taken`
+  String get theUsernameIsAlreadyTaken {
     return Intl.message(
-      'The login is already taken',
-      name: 'theLoginIsAlreadyTaken',
+      'The username is already taken',
+      name: 'theUsernameIsAlreadyTaken',
       desc: '',
       args: [],
     );

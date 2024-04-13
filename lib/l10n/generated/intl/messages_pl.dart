@@ -23,10 +23,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
-        "loginCannotBeEmpty":
-            MessageLookupByLibrary.simpleMessage("Login nie może być pusty"),
-        "loginIsTooShort":
-            MessageLookupByLibrary.simpleMessage("Login jest za krótki"),
         "password": MessageLookupByLibrary.simpleMessage("Hasło"),
         "passwordCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Hasło nie może być puste"),
@@ -36,8 +32,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hasła muszą być takie same"),
         "register": MessageLookupByLibrary.simpleMessage("Zarejestruj się"),
         "repeatPassword": MessageLookupByLibrary.simpleMessage("Powtórz hasło"),
-        "theLoginIsAlreadyTaken":
-            MessageLookupByLibrary.simpleMessage("Login jest już zajęty"),
-        "username": MessageLookupByLibrary.simpleMessage("Nazwa użytkownika")
+        "theUsernameIsAlreadyTaken": MessageLookupByLibrary.simpleMessage(
+            "Nazwa użytkownika jest już zajęta"),
+        "username": MessageLookupByLibrary.simpleMessage("Nazwa użytkownika"),
+        "usernameCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
+            "Nazwa użytkownika nie może być pusta"),
+        "usernameIsTooShort": MessageLookupByLibrary.simpleMessage(
+            "Nazwa użytkownika jest za krótka")
       };
 }

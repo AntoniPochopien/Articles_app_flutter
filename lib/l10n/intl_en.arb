@@ -2,13 +2,13 @@
     "@@locale": "en",
     "login":"Login",
     "username":"Username",
-    "loginCannotBeEmpty":"Login cannot be empty",
-    "loginIsTooShort":"Login is too short",
+    "usernameCannotBeEmpty":"Username cannot be empty",
+    "usernameIsTooShort":"Username is too short",
     "password":"Password",
     "passwordCannotBeEmpty":"Password cannot be empty",
     "passwordIsTooShort":"Password is too short",
     "register":"Register",
     "repeatPassword":"Repeat password",
     "passwordsMustBeTheSame":"Passwords must be the same",
-    "theLoginIsAlreadyTaken":"The login is already taken"
+    "theUsernameIsAlreadyTaken":"The username is already taken"
 }

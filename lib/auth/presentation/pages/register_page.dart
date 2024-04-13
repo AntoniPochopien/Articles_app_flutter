@@ -35,13 +35,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                   validator: (v) {
                     if (v.isEmpty) {
-                      return T.loginCannotBeEmpty;
+                      return T.usernameCannotBeEmpty;
                     } else if (v.length < 4) {
-                      return T.loginIsTooShort;
+                      return T.usernameIsTooShort;
                     } else {
                       return state.whenOrNull(
                           error: (value) => value.whenOrNull(
-                              notUnique: () => T.theLoginIsAlreadyTaken));
+                              notUnique: () => T.theUsernameIsAlreadyTaken));
                     }
                   },
                 ),

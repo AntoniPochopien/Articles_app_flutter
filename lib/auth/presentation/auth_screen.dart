@@ -3,6 +3,7 @@ import 'package:articles_app_flutter/auth/presentation/pages/login_page.dart';
 import 'package:articles_app_flutter/auth/presentation/pages/register_page.dart';
 import 'package:articles_app_flutter/common/constants/dur.dart';
 import 'package:articles_app_flutter/common/widgets/articles_scaffold.dart';
+import 'package:articles_app_flutter/navigation/app_router.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +32,12 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AuthCubit(),
-      child: BlocBuilder<AuthCubit, AuthState>(
+      child: BlocConsumer<AuthCubit, AuthState>(
+        listener: (context, state) {
+          state.mapOrNull(
+            authorized: (value) => context.replaceRoute(const DashboardRoute()),
+          );
+        },
         builder: (context, state) => ArticlesScaffold(
             body: Center(
           child: SingleChildScrollView(

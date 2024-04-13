@@ -20,6 +20,7 @@ mixin _$Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() cannotReach,
     required TResult Function() forbidden,
+    required TResult Function() unauthorized,
     required TResult Function() notUnique,
     required TResult Function() unexpected,
   }) =>
@@ -28,6 +29,7 @@ mixin _$Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? cannotReach,
     TResult? Function()? forbidden,
+    TResult? Function()? unauthorized,
     TResult? Function()? notUnique,
     TResult? Function()? unexpected,
   }) =>
@@ -36,6 +38,7 @@ mixin _$Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cannotReach,
     TResult Function()? forbidden,
+    TResult Function()? unauthorized,
     TResult Function()? notUnique,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -45,6 +48,7 @@ mixin _$Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(_CannotReach value) cannotReach,
     required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_NotUnique value) notUnique,
     required TResult Function(_Unexpected value) unexpected,
   }) =>
@@ -53,6 +57,7 @@ mixin _$Failure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CannotReach value)? cannotReach,
     TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_NotUnique value)? notUnique,
     TResult? Function(_Unexpected value)? unexpected,
   }) =>
@@ -61,6 +66,7 @@ mixin _$Failure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CannotReach value)? cannotReach,
     TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_NotUnique value)? notUnique,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
@@ -125,6 +131,7 @@ class _$CannotReachImpl implements _CannotReach {
   TResult when<TResult extends Object?>({
     required TResult Function() cannotReach,
     required TResult Function() forbidden,
+    required TResult Function() unauthorized,
     required TResult Function() notUnique,
     required TResult Function() unexpected,
   }) {
@@ -136,6 +143,7 @@ class _$CannotReachImpl implements _CannotReach {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? cannotReach,
     TResult? Function()? forbidden,
+    TResult? Function()? unauthorized,
     TResult? Function()? notUnique,
     TResult? Function()? unexpected,
   }) {
@@ -147,6 +155,7 @@ class _$CannotReachImpl implements _CannotReach {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cannotReach,
     TResult Function()? forbidden,
+    TResult Function()? unauthorized,
     TResult Function()? notUnique,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -162,6 +171,7 @@ class _$CannotReachImpl implements _CannotReach {
   TResult map<TResult extends Object?>({
     required TResult Function(_CannotReach value) cannotReach,
     required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_NotUnique value) notUnique,
     required TResult Function(_Unexpected value) unexpected,
   }) {
@@ -173,6 +183,7 @@ class _$CannotReachImpl implements _CannotReach {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CannotReach value)? cannotReach,
     TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_NotUnique value)? notUnique,
     TResult? Function(_Unexpected value)? unexpected,
   }) {
@@ -184,6 +195,7 @@ class _$CannotReachImpl implements _CannotReach {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CannotReach value)? cannotReach,
     TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_NotUnique value)? notUnique,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
@@ -239,6 +251,7 @@ class _$ForbiddenImpl implements _Forbidden {
   TResult when<TResult extends Object?>({
     required TResult Function() cannotReach,
     required TResult Function() forbidden,
+    required TResult Function() unauthorized,
     required TResult Function() notUnique,
     required TResult Function() unexpected,
   }) {
@@ -250,6 +263,7 @@ class _$ForbiddenImpl implements _Forbidden {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? cannotReach,
     TResult? Function()? forbidden,
+    TResult? Function()? unauthorized,
     TResult? Function()? notUnique,
     TResult? Function()? unexpected,
   }) {
@@ -261,6 +275,7 @@ class _$ForbiddenImpl implements _Forbidden {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cannotReach,
     TResult Function()? forbidden,
+    TResult Function()? unauthorized,
     TResult Function()? notUnique,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -276,6 +291,7 @@ class _$ForbiddenImpl implements _Forbidden {
   TResult map<TResult extends Object?>({
     required TResult Function(_CannotReach value) cannotReach,
     required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_NotUnique value) notUnique,
     required TResult Function(_Unexpected value) unexpected,
   }) {
@@ -287,6 +303,7 @@ class _$ForbiddenImpl implements _Forbidden {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CannotReach value)? cannotReach,
     TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_NotUnique value)? notUnique,
     TResult? Function(_Unexpected value)? unexpected,
   }) {
@@ -298,6 +315,7 @@ class _$ForbiddenImpl implements _Forbidden {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CannotReach value)? cannotReach,
     TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_NotUnique value)? notUnique,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
@@ -311,6 +329,126 @@ class _$ForbiddenImpl implements _Forbidden {
 
 abstract class _Forbidden implements Failure {
   const factory _Forbidden() = _$ForbiddenImpl;
+}
+
+/// @nodoc
+abstract class _$$UnauthorizedImplCopyWith<$Res> {
+  factory _$$UnauthorizedImplCopyWith(
+          _$UnauthorizedImpl value, $Res Function(_$UnauthorizedImpl) then) =
+      __$$UnauthorizedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UnauthorizedImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$UnauthorizedImpl>
+    implements _$$UnauthorizedImplCopyWith<$Res> {
+  __$$UnauthorizedImplCopyWithImpl(
+      _$UnauthorizedImpl _value, $Res Function(_$UnauthorizedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UnauthorizedImpl implements _Unauthorized {
+  const _$UnauthorizedImpl();
+
+  @override
+  String toString() {
+    return 'Failure.unauthorized()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UnauthorizedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cannotReach,
+    required TResult Function() forbidden,
+    required TResult Function() unauthorized,
+    required TResult Function() notUnique,
+    required TResult Function() unexpected,
+  }) {
+    return unauthorized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? cannotReach,
+    TResult? Function()? forbidden,
+    TResult? Function()? unauthorized,
+    TResult? Function()? notUnique,
+    TResult? Function()? unexpected,
+  }) {
+    return unauthorized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cannotReach,
+    TResult Function()? forbidden,
+    TResult Function()? unauthorized,
+    TResult Function()? notUnique,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (unauthorized != null) {
+      return unauthorized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CannotReach value) cannotReach,
+    required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_Unauthorized value) unauthorized,
+    required TResult Function(_NotUnique value) notUnique,
+    required TResult Function(_Unexpected value) unexpected,
+  }) {
+    return unauthorized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CannotReach value)? cannotReach,
+    TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_Unauthorized value)? unauthorized,
+    TResult? Function(_NotUnique value)? notUnique,
+    TResult? Function(_Unexpected value)? unexpected,
+  }) {
+    return unauthorized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CannotReach value)? cannotReach,
+    TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_Unauthorized value)? unauthorized,
+    TResult Function(_NotUnique value)? notUnique,
+    TResult Function(_Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (unauthorized != null) {
+      return unauthorized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Unauthorized implements Failure {
+  const factory _Unauthorized() = _$UnauthorizedImpl;
 }
 
 /// @nodoc
@@ -353,6 +491,7 @@ class _$NotUniqueImpl implements _NotUnique {
   TResult when<TResult extends Object?>({
     required TResult Function() cannotReach,
     required TResult Function() forbidden,
+    required TResult Function() unauthorized,
     required TResult Function() notUnique,
     required TResult Function() unexpected,
   }) {
@@ -364,6 +503,7 @@ class _$NotUniqueImpl implements _NotUnique {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? cannotReach,
     TResult? Function()? forbidden,
+    TResult? Function()? unauthorized,
     TResult? Function()? notUnique,
     TResult? Function()? unexpected,
   }) {
@@ -375,6 +515,7 @@ class _$NotUniqueImpl implements _NotUnique {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cannotReach,
     TResult Function()? forbidden,
+    TResult Function()? unauthorized,
     TResult Function()? notUnique,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -390,6 +531,7 @@ class _$NotUniqueImpl implements _NotUnique {
   TResult map<TResult extends Object?>({
     required TResult Function(_CannotReach value) cannotReach,
     required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_NotUnique value) notUnique,
     required TResult Function(_Unexpected value) unexpected,
   }) {
@@ -401,6 +543,7 @@ class _$NotUniqueImpl implements _NotUnique {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CannotReach value)? cannotReach,
     TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_NotUnique value)? notUnique,
     TResult? Function(_Unexpected value)? unexpected,
   }) {
@@ -412,6 +555,7 @@ class _$NotUniqueImpl implements _NotUnique {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CannotReach value)? cannotReach,
     TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_NotUnique value)? notUnique,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
@@ -467,6 +611,7 @@ class _$UnexpectedImpl implements _Unexpected {
   TResult when<TResult extends Object?>({
     required TResult Function() cannotReach,
     required TResult Function() forbidden,
+    required TResult Function() unauthorized,
     required TResult Function() notUnique,
     required TResult Function() unexpected,
   }) {
@@ -478,6 +623,7 @@ class _$UnexpectedImpl implements _Unexpected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? cannotReach,
     TResult? Function()? forbidden,
+    TResult? Function()? unauthorized,
     TResult? Function()? notUnique,
     TResult? Function()? unexpected,
   }) {
@@ -489,6 +635,7 @@ class _$UnexpectedImpl implements _Unexpected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cannotReach,
     TResult Function()? forbidden,
+    TResult Function()? unauthorized,
     TResult Function()? notUnique,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -504,6 +651,7 @@ class _$UnexpectedImpl implements _Unexpected {
   TResult map<TResult extends Object?>({
     required TResult Function(_CannotReach value) cannotReach,
     required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_NotUnique value) notUnique,
     required TResult Function(_Unexpected value) unexpected,
   }) {
@@ -515,6 +663,7 @@ class _$UnexpectedImpl implements _Unexpected {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CannotReach value)? cannotReach,
     TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_NotUnique value)? notUnique,
     TResult? Function(_Unexpected value)? unexpected,
   }) {
@@ -526,6 +675,7 @@ class _$UnexpectedImpl implements _Unexpected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CannotReach value)? cannotReach,
     TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_NotUnique value)? notUnique,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),

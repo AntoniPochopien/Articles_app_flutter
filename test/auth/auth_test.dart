@@ -16,7 +16,7 @@ import 'auth_test.mocks.dart';
 void main() {
   Future<void> pumpRouterApp(WidgetTester tester) async {
     final appRouter = AppRouter();
-    appRouter.navigate(const AppStartupRoute());
+    appRouter.navigate(const AuthRoute());
     return await tester.pumpWidget(MaterialApp.router(
       localizationsDelegates: L10n.localizationDelegates,
       supportedLocales: L10n.supportedLocales,
@@ -27,15 +27,14 @@ void main() {
 
   testWidgets('Check if app detect already taken username',
       (WidgetTester tester) async {
-    await pumpRouterApp(tester);
     final authRepository = MockIAuthRepository();
     getIt.registerLazySingleton<IAuthRepository>(() => authRepository);
-
+    await pumpRouterApp(tester);
     await tester.pumpAndSettle();
     final buttonFinder = find.widgetWithText(TextButton, T.register);
     await tester.tap(buttonFinder);
     await tester.pumpAndSettle();
-    final loginInputFinder = find.widgetWithText(TextField, T.login);
+    final loginInputFinder = find.widgetWithText(TextField, T.username);
     when(authRepository.checkUsername('xxxx'))
         .thenAnswer((_) async => left(const Failure.notUnique()));
     await tester.enterText(loginInputFinder, 'xxxx');
@@ -44,7 +43,7 @@ void main() {
     final registerBtnFinder = find.widgetWithText(Button, T.register);
     await tester.tap(registerBtnFinder);
     await tester.pumpAndSettle();
-    final findErrorText = find.text(T.theLoginIsAlreadyTaken);
+    final findErrorText = find.text(T.theUsernameIsAlreadyTaken);
     expect(findErrorText, findsOneWidget);
   });
 }

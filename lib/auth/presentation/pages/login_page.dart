@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
               hint: T.username,
               validator: (v) {
                 if (v.isEmpty) {
-                  return T.loginCannotBeEmpty;
+                  return T.usernameCannotBeEmpty;
                 }
                 return null;
               },

@@ -23,10 +23,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "login": MessageLookupByLibrary.simpleMessage("Login"),
-        "loginCannotBeEmpty":
-            MessageLookupByLibrary.simpleMessage("Login cannot be empty"),
-        "loginIsTooShort":
-            MessageLookupByLibrary.simpleMessage("Login is too short"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
@@ -37,8 +33,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("Repeat password"),
-        "theLoginIsAlreadyTaken":
-            MessageLookupByLibrary.simpleMessage("The login is already taken"),
-        "username": MessageLookupByLibrary.simpleMessage("Username")
+        "theUsernameIsAlreadyTaken": MessageLookupByLibrary.simpleMessage(
+            "The username is already taken"),
+        "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "usernameCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
+        "usernameIsTooShort":
+            MessageLookupByLibrary.simpleMessage("Username is too short")
       };
 }
