@@ -5,8 +5,13 @@ class ArticlesScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget? body;
   final Widget? floatingActionButton;
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
   const ArticlesScaffold(
-      {super.key, this.appBar, this.body, this.floatingActionButton});
+      {super.key,
+      this.appBar,
+      this.body,
+      this.floatingActionButton,
+      this.floatingActionButtonLocation});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +20,7 @@ class ArticlesScaffold extends StatelessWidget {
       child: Scaffold(
         appBar: appBar,
         floatingActionButton: floatingActionButton,
+        floatingActionButtonLocation: floatingActionButtonLocation,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: Dim.screenPadding),
           child: body,

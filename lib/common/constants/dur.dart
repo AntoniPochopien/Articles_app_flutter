@@ -1,3 +1,3 @@
 class Dur {
-  static const animationDuration = 300;
+  static const animationDuration = Duration(milliseconds: 300);
 }

@@ -55,7 +55,7 @@ class _AuthScreenState extends State<AuthScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AnimatedSwitcher(
-                  duration: const Duration(milliseconds: Dur.animationDuration),
+                  duration: Dur.animationDuration,
                   child: _isLogin
                       ? LoginPage(onModeChange: () => _changeMode(state))
                       : RegisterPage(onModeChange: () => _changeMode(state)),
