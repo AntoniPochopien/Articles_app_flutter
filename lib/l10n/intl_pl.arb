@@ -1,5 +1,6 @@
 {
     "@@locale": "pl",
+    "appName":"Articles",
     "login":"Zaloguj się",
     "username":"Nazwa użytkownika",
     "usernameCannotBeEmpty":"Nazwa użytkownika nie może być pusta",
@@ -10,5 +11,7 @@
     "register":"Zarejestruj się",
     "repeatPassword":"Powtórz hasło",
     "passwordsMustBeTheSame":"Hasła muszą być takie same",
-    "theUsernameIsAlreadyTaken":"Nazwa użytkownika jest już zajęta"
+    "theUsernameIsAlreadyTaken":"Nazwa użytkownika jest już zajęta",
+    "registeredSuccessfully":"Registered successfully",
+    "nowLogIn":"Now log in using the same details"
 }

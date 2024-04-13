@@ -12,8 +12,9 @@ class AuthRepository implements IAuthRepository {
   @override
   Future<Either<Failure, Unit>> checkUsername(String username) async {
     try {
-      final response = await http
-          .get(Uri.parse('${Api.url}/users/exist?username=$username'));
+      final response = await http.get(
+          Uri.parse('${Api.url}/users/exist?username=$username'),
+          headers: Api.headers());
       return ErrorHalnder.getFailureFromStatusCode(
               statusCode: response.statusCode, source: 'checkUsername')
           .fold((l) => left(l), (r) {
@@ -35,8 +36,8 @@ class AuthRepository implements IAuthRepository {
       {required String username, required String password}) async {
     try {
       final payload = jsonEncode({'username': username, 'password': password});
-      final response =
-          await http.post(Uri.parse('${Api.url}/auth/login'), body: payload);
+      final response = await http.post(Uri.parse('${Api.url}/auth/login'),
+          body: payload, headers: Api.headers());
       return ErrorHalnder.getFailureFromStatusCode(
               statusCode: response.statusCode, source: 'login')
           .fold((l) => left(l), (r) {
@@ -54,8 +55,8 @@ class AuthRepository implements IAuthRepository {
       {required String username, required String password}) async {
     try {
       final payload = jsonEncode({'username': username, 'password': password});
-      final response =
-          await http.post(Uri.parse('${Api.url}/auth/register'), body: payload);
+      final response = await http.post(Uri.parse('${Api.url}/auth/register'),
+          body: payload, headers: Api.headers());
       return ErrorHalnder.getFailureFromStatusCode(
           statusCode: response.statusCode, source: 'register');
     } catch (e) {

@@ -22,7 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "appName": MessageLookupByLibrary.simpleMessage("Articles"),
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
+        "nowLogIn": MessageLookupByLibrary.simpleMessage(
+            "Now log in using the same details"),
         "password": MessageLookupByLibrary.simpleMessage("Hasło"),
         "passwordCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Hasło nie może być puste"),
@@ -31,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordsMustBeTheSame":
             MessageLookupByLibrary.simpleMessage("Hasła muszą być takie same"),
         "register": MessageLookupByLibrary.simpleMessage("Zarejestruj się"),
+        "registeredSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Registered successfully"),
         "repeatPassword": MessageLookupByLibrary.simpleMessage("Powtórz hasło"),
         "theUsernameIsAlreadyTaken": MessageLookupByLibrary.simpleMessage(
             "Nazwa użytkownika jest już zajęta"),

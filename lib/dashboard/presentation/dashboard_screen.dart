@@ -1,3 +1,5 @@
+import 'package:articles_app_flutter/common/widgets/articles_appbar.dart';
+import 'package:articles_app_flutter/common/widgets/articles_scaffold.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +9,8 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const ArticlesScaffold(
+      appBar: ArticlesAppBar(),
+    );
   }
 }

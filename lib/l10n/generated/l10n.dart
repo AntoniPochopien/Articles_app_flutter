@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Articles`
+  String get appName {
+    return Intl.message(
+      'Articles',
+      name: 'appName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login`
   String get login {
     return Intl.message(
@@ -155,6 +165,26 @@ class S {
     return Intl.message(
       'The username is already taken',
       name: 'theUsernameIsAlreadyTaken',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Zarejestrowano pomyślnie`
+  String get registeredSuccessfully {
+    return Intl.message(
+      'Zarejestrowano pomyślnie',
+      name: 'registeredSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Teraz zaloguj się używając tych samych danych`
+  String get nowLogIn {
+    return Intl.message(
+      'Teraz zaloguj się używając tych samych danych',
+      name: 'nowLogIn',
       desc: '',
       args: [],
     );

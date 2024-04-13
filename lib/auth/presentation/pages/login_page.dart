@@ -47,18 +47,20 @@ class _LoginPageState extends State<LoginPage> {
               },
             ),
             Button(
-                text: T.login,
-                onPressed: () => state.maybeWhen(
-                      orElse: () {
-                        if (_formKey.currentState!.validate()) {
-                          context.read<AuthCubit>().login(
-                              username: _usernameController.text,
-                              password: _pwdController.text);
-                        }
-                        return null;
-                      },
-                      loading: () => null,
-                    )),
+              text: T.login,
+              onPressed: () => state.maybeWhen(
+                orElse: () {
+                  if (_formKey.currentState!.validate()) {
+                    context.read<AuthCubit>().login(
+                        username: _usernameController.text,
+                        password: _pwdController.text);
+                  }
+                  return null;
+                },
+                loading: () => null,
+              ),
+              isLoading: state.mapOrNull(loading: (value) => true) ?? false,
+            ),
             TextButton(
               child: Text(T.register),
               onPressed: () => widget.onModeChange(),

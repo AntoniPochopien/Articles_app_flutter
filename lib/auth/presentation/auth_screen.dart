@@ -1,6 +1,7 @@
 import 'package:articles_app_flutter/auth/application/cubit/auth_cubit.dart';
 import 'package:articles_app_flutter/auth/presentation/pages/login_page.dart';
 import 'package:articles_app_flutter/auth/presentation/pages/register_page.dart';
+import 'package:articles_app_flutter/auth/presentation/widgets/register_succes_dialog.dart';
 import 'package:articles_app_flutter/common/constants/dur.dart';
 import 'package:articles_app_flutter/common/widgets/articles_scaffold.dart';
 import 'package:articles_app_flutter/navigation/app_router.dart';
@@ -28,6 +29,9 @@ class _AuthScreenState extends State<AuthScreen> {
     setState(() => _isLogin = !_isLogin);
   }
 
+  void _showDialog(BuildContext context) => showDialog(
+      context: context, builder: (context) => const RegisterSuccessDialog());
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -36,6 +40,12 @@ class _AuthScreenState extends State<AuthScreen> {
         listener: (context, state) {
           state.mapOrNull(
             authorized: (value) => context.replaceRoute(const DashboardRoute()),
+            registerSuccess: (value) {
+              setState(() {
+                _isLogin = true;
+              });
+              _showDialog(context);
+            },
           );
         },
         builder: (context, state) => ArticlesScaffold(

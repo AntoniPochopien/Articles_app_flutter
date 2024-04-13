@@ -70,18 +70,20 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                 ),
                 Button(
-                    text: T.register,
-                    onPressed: () => state.maybeWhen(
-                          orElse: () {
-                            if (_formKey.currentState!.validate()) {
-                              context.read<AuthCubit>().register(
-                                  username: _usernameController.text,
-                                  password: _pwdController.text);
-                            }
-                            return null;
-                          },
-                          loading: () => null,
-                        )),
+                  text: T.register,
+                  onPressed: () => state.maybeWhen(
+                    orElse: () {
+                      if (_formKey.currentState!.validate()) {
+                        context.read<AuthCubit>().register(
+                            username: _usernameController.text,
+                            password: _pwdController.text);
+                      }
+                      return null;
+                    },
+                    loading: () => null,
+                  ),
+                  isLoading: state.mapOrNull(loading: (value) => true) ?? false,
+                ),
                 TextButton(
                   child: Text(T.login),
                   onPressed: () => widget.onModeChange(),
