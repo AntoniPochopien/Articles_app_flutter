@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 class ArticlesScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget? body;
-  const ArticlesScaffold({super.key, this.appBar, this.body});
+  final Widget? floatingActionButton;
+  const ArticlesScaffold(
+      {super.key, this.appBar, this.body, this.floatingActionButton});
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,7 @@ class ArticlesScaffold extends StatelessWidget {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: appBar,
+        floatingActionButton: floatingActionButton,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: Dim.screenPadding),
           child: body,

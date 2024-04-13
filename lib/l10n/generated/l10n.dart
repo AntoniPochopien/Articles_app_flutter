@@ -170,21 +170,31 @@ class S {
     );
   }
 
-  /// `Zarejestrowano pomyślnie`
+  /// `Registered successfully`
   String get registeredSuccessfully {
     return Intl.message(
-      'Zarejestrowano pomyślnie',
+      'Registered successfully',
       name: 'registeredSuccessfully',
       desc: '',
       args: [],
     );
   }
 
-  /// `Teraz zaloguj się używając tych samych danych`
+  /// `Now log in using the same details`
   String get nowLogIn {
     return Intl.message(
-      'Teraz zaloguj się używając tych samych danych',
+      'Now log in using the same details',
       name: 'nowLogIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add article`
+  String get addArticle {
+    return Intl.message(
+      'Add article',
+      name: 'addArticle',
       desc: '',
       args: [],
     );

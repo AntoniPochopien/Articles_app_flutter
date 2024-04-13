@@ -12,6 +12,7 @@
     "repeatPassword":"Powtórz hasło",
     "passwordsMustBeTheSame":"Hasła muszą być takie same",
     "theUsernameIsAlreadyTaken":"Nazwa użytkownika jest już zajęta",
-    "registeredSuccessfully":"Registered successfully",
-    "nowLogIn":"Now log in using the same details"
+    "registeredSuccessfully":"Zarejestrowano pomyślnie",
+    "nowLogIn":"Teraz zaloguj się używając tych samych danych",
+    "addArticle":"Dodaj artykuł"
 }

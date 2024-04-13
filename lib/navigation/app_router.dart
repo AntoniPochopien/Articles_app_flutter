@@ -1,3 +1,4 @@
+import 'package:articles_app_flutter/add_article/presentation/add_article_screen.dart';
 import 'package:articles_app_flutter/app_startup/presentation/app_startup_screen.dart';
 import 'package:articles_app_flutter/auth/presentation/auth_screen.dart';
 import 'package:articles_app_flutter/dashboard/presentation/dashboard_screen.dart';
@@ -12,5 +13,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: AppStartupRoute.page, initial: true),
         AutoRoute(page: AuthRoute.page),
         AutoRoute(page: DashboardRoute.page),
+        AutoRoute(page: AddArticleRoute.page),
       ];
 }
