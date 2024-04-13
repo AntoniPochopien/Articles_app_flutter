@@ -3,11 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 
-import 'package:articles_app_flutter/auth/domain/i_auth_repository.dart' as _i3;
-import 'package:articles_app_flutter/common/models/failure.dart' as _i5;
-import 'package:articles_app_flutter/domain/user.dart' as _i6;
+import 'package:articles_app_flutter/auth/domain/i_auth_repository.dart' as _i4;
+import 'package:articles_app_flutter/common/models/failure.dart' as _i6;
+import 'package:articles_app_flutter/domain/authenticated_user.dart' as _i8;
+import 'package:articles_app_flutter/domain/user.dart' as _i3;
+import 'package:articles_app_flutter/local_storage/domain/i_local_storage_repository.dart'
+    as _i7;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -34,16 +37,26 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
+class _FakeUser_1 extends _i1.SmartFake implements _i3.User {
+  _FakeUser_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [IAuthRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
+class MockIAuthRepository extends _i1.Mock implements _i4.IAuthRepository {
   MockIAuthRepository() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.User>> login({
+  _i5.Future<_i2.Either<_i6.Failure, _i3.User>> login({
     required String? username,
     required String? password,
   }) =>
@@ -56,8 +69,8 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
             #password: password,
           },
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i6.User>>.value(
-            _FakeEither_0<_i5.Failure, _i6.User>(
+        returnValue: _i5.Future<_i2.Either<_i6.Failure, _i3.User>>.value(
+            _FakeEither_0<_i6.Failure, _i3.User>(
           this,
           Invocation.method(
             #login,
@@ -68,10 +81,10 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
             },
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.User>>);
+      ) as _i5.Future<_i2.Either<_i6.Failure, _i3.User>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>> register({
+  _i5.Future<_i2.Either<_i6.Failure, _i2.Unit>> register({
     required String? username,
     required String? password,
   }) =>
@@ -84,8 +97,8 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
             #password: password,
           },
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>.value(
-            _FakeEither_0<_i5.Failure, _i2.Unit>(
+        returnValue: _i5.Future<_i2.Either<_i6.Failure, _i2.Unit>>.value(
+            _FakeEither_0<_i6.Failure, _i2.Unit>(
           this,
           Invocation.method(
             #register,
@@ -96,22 +109,87 @@ class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
             },
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>);
+      ) as _i5.Future<_i2.Either<_i6.Failure, _i2.Unit>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>> checkUsername(String? login) =>
+  _i5.Future<_i2.Either<_i6.Failure, _i2.Unit>> checkUsername(String? login) =>
       (super.noSuchMethod(
         Invocation.method(
           #checkUsername,
           [login],
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>.value(
-            _FakeEither_0<_i5.Failure, _i2.Unit>(
+        returnValue: _i5.Future<_i2.Either<_i6.Failure, _i2.Unit>>.value(
+            _FakeEither_0<_i6.Failure, _i2.Unit>(
           this,
           Invocation.method(
             #checkUsername,
             [login],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>);
+      ) as _i5.Future<_i2.Either<_i6.Failure, _i2.Unit>>);
+}
+
+/// A class which mocks [ILocalStorageRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockILocalStorageRepository extends _i1.Mock
+    implements _i7.ILocalStorageRepository {
+  MockILocalStorageRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<void> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  void updateUser(_i3.User? user) => super.noSuchMethod(
+        Invocation.method(
+          #updateUser,
+          [user],
+        ),
+        returnValueForMissingStub: null,
+      );
+}
+
+/// A class which mocks [AuthenticatedUser].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAuthenticatedUser extends _i1.Mock implements _i8.AuthenticatedUser {
+  MockAuthenticatedUser() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.User get user => (super.noSuchMethod(
+        Invocation.getter(#user),
+        returnValue: _FakeUser_1(
+          this,
+          Invocation.getter(#user),
+        ),
+      ) as _i3.User);
+
+  @override
+  set user(_i3.User? _user) => super.noSuchMethod(
+        Invocation.setter(
+          #user,
+          _user,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void updateUser(_i3.User? newUser) => super.noSuchMethod(
+        Invocation.method(
+          #updateUser,
+          [newUser],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

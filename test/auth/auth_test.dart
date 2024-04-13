@@ -2,8 +2,10 @@ import 'package:articles_app_flutter/auth/domain/i_auth_repository.dart';
 import 'package:articles_app_flutter/common/models/failure.dart';
 import 'package:articles_app_flutter/common/widgets/button.dart';
 import 'package:articles_app_flutter/di.dart';
+import 'package:articles_app_flutter/domain/authenticated_user.dart';
 import 'package:articles_app_flutter/domain/user.dart';
 import 'package:articles_app_flutter/l10n/l10n.dart';
+import 'package:articles_app_flutter/local_storage/domain/i_local_storage_repository.dart';
 import 'package:articles_app_flutter/navigation/app_router.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,7 @@ import 'package:mockito/mockito.dart';
 
 import 'auth_test.mocks.dart';
 
-@GenerateMocks([IAuthRepository])
+@GenerateMocks([IAuthRepository, ILocalStorageRepository, AuthenticatedUser])
 void main() {
   Future<void> pumpRouterApp(WidgetTester tester) async {
     final appRouter = AppRouter();
@@ -28,11 +30,19 @@ void main() {
 
   tearDown(() {
     getIt.unregister<IAuthRepository>();
+    getIt.unregister<ILocalStorageRepository>();
+    getIt.unregister<AuthenticatedUser>();
   });
 
   testWidgets('Check if app detect already taken username', (tester) async {
     final authRepository = MockIAuthRepository();
+    final localStorageRepositoru = MockILocalStorageRepository();
+    final authenticatedUser = MockAuthenticatedUser();
     getIt.registerLazySingleton<IAuthRepository>(() => authRepository);
+    getIt.registerLazySingleton<ILocalStorageRepository>(
+        () => localStorageRepositoru);
+    getIt.registerLazySingleton<AuthenticatedUser>(() => authenticatedUser);
+
     await pumpRouterApp(tester);
     await tester.pumpAndSettle();
     final buttonFinder = find.widgetWithText(TextButton, T.register);
@@ -52,7 +62,13 @@ void main() {
 
   testWidgets('Check if app show register success dialog', (tester) async {
     final authRepository = MockIAuthRepository();
+    final localStorageRepositoru = MockILocalStorageRepository();
+    final authenticatedUser = MockAuthenticatedUser();
     getIt.registerLazySingleton<IAuthRepository>(() => authRepository);
+    getIt.registerLazySingleton<ILocalStorageRepository>(
+        () => localStorageRepositoru);
+    getIt.registerLazySingleton<AuthenticatedUser>(() => authenticatedUser);
+
     await pumpRouterApp(tester);
     await tester.pumpAndSettle();
     final buttonFinder = find.widgetWithText(TextButton, T.register);
@@ -86,7 +102,13 @@ void main() {
   testWidgets('Check if successful login navigate to dashboard',
       (tester) async {
     final authRepository = MockIAuthRepository();
+    final localStorageRepositoru = MockILocalStorageRepository();
+    final authenticatedUser = MockAuthenticatedUser();
     getIt.registerLazySingleton<IAuthRepository>(() => authRepository);
+    getIt.registerLazySingleton<ILocalStorageRepository>(
+        () => localStorageRepositoru);
+    getIt.registerLazySingleton<AuthenticatedUser>(() => authenticatedUser);
+
     await pumpRouterApp(tester);
     when(authRepository.login(username: 'xxxx', password: '123456'))
         .thenAnswer((_) async => right(User.none()));
