@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 
 class ArticlesAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
-  const ArticlesAppBar({super.key, this.title});
+  final List<Widget>? actions;
+  const ArticlesAppBar({super.key, this.title, this.actions});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title ?? T.appName),
+      actions: actions,
     );
   }
 
