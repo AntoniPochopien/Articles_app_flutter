@@ -14,5 +14,11 @@
     "theUsernameIsAlreadyTaken":"The username is already taken",
     "registeredSuccessfully":"Registered successfully",
     "nowLogIn":"Now log in using the same details",
-    "addArticle":"Add article"
+    "addArticle":"Add article",
+    "yourArticleIsNowVisible":"Your article is now visible to other users!",
+    "successfullyPublished":"Successfully published",
+    "ok":"Ok",
+    "publish":"Publish",
+    "titleOfTheArticle":"Title of the article",
+    "articleContent":"Article content..."
 }

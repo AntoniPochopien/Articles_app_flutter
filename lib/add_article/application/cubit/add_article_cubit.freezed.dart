@@ -17,9 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AddArticleState {
   String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String get content => throw _privateConstructorUsedError;
   List<XFile> get images => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get successfulyPublished => throw _privateConstructorUsedError;
   Failure? get error => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -35,10 +36,13 @@ abstract class $AddArticleStateCopyWith<$Res> {
   @useResult
   $Res call(
       {String title,
-      String description,
+      String content,
       List<XFile> images,
       bool isLoading,
+      bool successfulyPublished,
       Failure? error});
+
+  $FailureCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -55,9 +59,10 @@ class _$AddArticleStateCopyWithImpl<$Res, $Val extends AddArticleState>
   @override
   $Res call({
     Object? title = null,
-    Object? description = null,
+    Object? content = null,
     Object? images = null,
     Object? isLoading = null,
+    Object? successfulyPublished = null,
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
@@ -65,9 +70,9 @@ class _$AddArticleStateCopyWithImpl<$Res, $Val extends AddArticleState>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
               as String,
       images: null == images
           ? _value.images
@@ -77,11 +82,27 @@ class _$AddArticleStateCopyWithImpl<$Res, $Val extends AddArticleState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      successfulyPublished: null == successfulyPublished
+          ? _value.successfulyPublished
+          : successfulyPublished // ignore: cast_nullable_to_non_nullable
+              as bool,
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as Failure?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FailureCopyWith<$Res>? get error {
+    if (_value.error == null) {
+      return null;
+    }
+
+    return $FailureCopyWith<$Res>(_value.error!, (value) {
+      return _then(_value.copyWith(error: value) as $Val);
+    });
   }
 }
 
@@ -95,10 +116,14 @@ abstract class _$$AddArticleStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {String title,
-      String description,
+      String content,
       List<XFile> images,
       bool isLoading,
+      bool successfulyPublished,
       Failure? error});
+
+  @override
+  $FailureCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -113,9 +138,10 @@ class __$$AddArticleStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = null,
-    Object? description = null,
+    Object? content = null,
     Object? images = null,
     Object? isLoading = null,
+    Object? successfulyPublished = null,
     Object? error = freezed,
   }) {
     return _then(_$AddArticleStateImpl(
@@ -123,9 +149,9 @@ class __$$AddArticleStateImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
               as String,
       images: null == images
           ? _value._images
@@ -134,6 +160,10 @@ class __$$AddArticleStateImplCopyWithImpl<$Res>
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      successfulyPublished: null == successfulyPublished
+          ? _value.successfulyPublished
+          : successfulyPublished // ignore: cast_nullable_to_non_nullable
               as bool,
       error: freezed == error
           ? _value.error
@@ -148,9 +178,10 @@ class __$$AddArticleStateImplCopyWithImpl<$Res>
 class _$AddArticleStateImpl implements _AddArticleState {
   const _$AddArticleStateImpl(
       {this.title = '',
-      this.description = '',
+      this.content = '',
       final List<XFile> images = const [],
       this.isLoading = false,
+      this.successfulyPublished = false,
       this.error})
       : _images = images;
 
@@ -159,7 +190,7 @@ class _$AddArticleStateImpl implements _AddArticleState {
   final String title;
   @override
   @JsonKey()
-  final String description;
+  final String content;
   final List<XFile> _images;
   @override
   @JsonKey()
@@ -173,11 +204,14 @@ class _$AddArticleStateImpl implements _AddArticleState {
   @JsonKey()
   final bool isLoading;
   @override
+  @JsonKey()
+  final bool successfulyPublished;
+  @override
   final Failure? error;
 
   @override
   String toString() {
-    return 'AddArticleState(title: $title, description: $description, images: $images, isLoading: $isLoading, error: $error)';
+    return 'AddArticleState(title: $title, content: $content, images: $images, isLoading: $isLoading, successfulyPublished: $successfulyPublished, error: $error)';
   }
 
   @override
@@ -186,22 +220,24 @@ class _$AddArticleStateImpl implements _AddArticleState {
         (other.runtimeType == runtimeType &&
             other is _$AddArticleStateImpl &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.content, content) || other.content == content) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            const DeepCollectionEquality().equals(other.error, error));
+            (identical(other.successfulyPublished, successfulyPublished) ||
+                other.successfulyPublished == successfulyPublished) &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       title,
-      description,
+      content,
       const DeepCollectionEquality().hash(_images),
       isLoading,
-      const DeepCollectionEquality().hash(error));
+      successfulyPublished,
+      error);
 
   @JsonKey(ignore: true)
   @override
@@ -214,19 +250,22 @@ class _$AddArticleStateImpl implements _AddArticleState {
 abstract class _AddArticleState implements AddArticleState {
   const factory _AddArticleState(
       {final String title,
-      final String description,
+      final String content,
       final List<XFile> images,
       final bool isLoading,
+      final bool successfulyPublished,
       final Failure? error}) = _$AddArticleStateImpl;
 
   @override
   String get title;
   @override
-  String get description;
+  String get content;
   @override
   List<XFile> get images;
   @override
   bool get isLoading;
+  @override
+  bool get successfulyPublished;
   @override
   Failure? get error;
   @override

@@ -14,5 +14,11 @@
     "theUsernameIsAlreadyTaken":"Nazwa użytkownika jest już zajęta",
     "registeredSuccessfully":"Zarejestrowano pomyślnie",
     "nowLogIn":"Teraz zaloguj się używając tych samych danych",
-    "addArticle":"Dodaj artykuł"
+    "addArticle":"Dodaj artykuł",
+    "yourArticleIsNowVisible":"Twój artykuł jest już widoczny dla innych użytkowników!",
+    "successfullyPublished":"Pomyślnie opublikowano",
+    "ok":"Ok",
+    "publish":"Opublikuj",
+    "titleOfTheArticle":"Tytuł artykułu",
+    "articleContent":"Treść artykułu..."
 }

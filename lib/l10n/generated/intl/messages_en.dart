@@ -24,9 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addArticle": MessageLookupByLibrary.simpleMessage("Add article"),
         "appName": MessageLookupByLibrary.simpleMessage("Articles"),
+        "articleContent":
+            MessageLookupByLibrary.simpleMessage("Article content..."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "nowLogIn": MessageLookupByLibrary.simpleMessage(
             "Now log in using the same details"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
@@ -34,17 +37,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password is too short"),
         "passwordsMustBeTheSame":
             MessageLookupByLibrary.simpleMessage("Passwords must be the same"),
+        "publish": MessageLookupByLibrary.simpleMessage("Publish"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registeredSuccessfully":
             MessageLookupByLibrary.simpleMessage("Registered successfully"),
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("Repeat password"),
+        "successfullyPublished":
+            MessageLookupByLibrary.simpleMessage("Successfully published"),
         "theUsernameIsAlreadyTaken": MessageLookupByLibrary.simpleMessage(
             "The username is already taken"),
+        "titleOfTheArticle":
+            MessageLookupByLibrary.simpleMessage("Title of the article"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
         "usernameIsTooShort":
-            MessageLookupByLibrary.simpleMessage("Username is too short")
+            MessageLookupByLibrary.simpleMessage("Username is too short"),
+        "yourArticleIsNowVisible": MessageLookupByLibrary.simpleMessage(
+            "Your article is now visible to other users!")
       };
 }

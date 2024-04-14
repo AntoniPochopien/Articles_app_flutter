@@ -1,3 +1,5 @@
+import 'package:articles_app_flutter/add_article/domain/i_add_article_repository.dart';
+import 'package:articles_app_flutter/add_article/infrastructure/add_article_repository.dart';
 import 'package:articles_app_flutter/auth/domain/i_auth_repository.dart';
 import 'package:articles_app_flutter/auth/infrastructure/auth_repository.dart';
 import 'package:articles_app_flutter/domain/authenticated_user.dart';
@@ -14,5 +16,7 @@ void diInit() {
   getIt.registerLazySingleton<ILocalStorageRepository>(
       () => LocalStorageRepository());
   getIt.registerLazySingleton<IAuthRepository>(() => AuthRepository());
+  getIt.registerLazySingleton<IAddArticleRepository>(
+      () => AddArticleRepository());
   getIt.registerLazySingleton(() => AuthenticatedUser(User.none()));
 }

@@ -199,6 +199,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Your article is now visible to other users!`
+  String get yourArticleIsNowVisible {
+    return Intl.message(
+      'Your article is now visible to other users!',
+      name: 'yourArticleIsNowVisible',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successfully published`
+  String get successfullyPublished {
+    return Intl.message(
+      'Successfully published',
+      name: 'successfullyPublished',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Publish`
+  String get publish {
+    return Intl.message(
+      'Publish',
+      name: 'publish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title of the article`
+  String get titleOfTheArticle {
+    return Intl.message(
+      'Title of the article',
+      name: 'titleOfTheArticle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Article content...`
+  String get articleContent {
+    return Intl.message(
+      'Article content...',
+      name: 'articleContent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

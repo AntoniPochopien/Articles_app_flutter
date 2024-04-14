@@ -24,9 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addArticle": MessageLookupByLibrary.simpleMessage("Dodaj artykuł"),
         "appName": MessageLookupByLibrary.simpleMessage("Articles"),
+        "articleContent":
+            MessageLookupByLibrary.simpleMessage("Treść artykułu..."),
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
         "nowLogIn": MessageLookupByLibrary.simpleMessage(
             "Teraz zaloguj się używając tych samych danych"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "password": MessageLookupByLibrary.simpleMessage("Hasło"),
         "passwordCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Hasło nie może być puste"),
@@ -34,16 +37,23 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hasło jest za krótkie"),
         "passwordsMustBeTheSame":
             MessageLookupByLibrary.simpleMessage("Hasła muszą być takie same"),
+        "publish": MessageLookupByLibrary.simpleMessage("Opublikuj"),
         "register": MessageLookupByLibrary.simpleMessage("Zarejestruj się"),
         "registeredSuccessfully":
             MessageLookupByLibrary.simpleMessage("Zarejestrowano pomyślnie"),
         "repeatPassword": MessageLookupByLibrary.simpleMessage("Powtórz hasło"),
+        "successfullyPublished":
+            MessageLookupByLibrary.simpleMessage("Pomyślnie opublikowano"),
         "theUsernameIsAlreadyTaken": MessageLookupByLibrary.simpleMessage(
             "Nazwa użytkownika jest już zajęta"),
+        "titleOfTheArticle":
+            MessageLookupByLibrary.simpleMessage("Tytuł artykułu"),
         "username": MessageLookupByLibrary.simpleMessage("Nazwa użytkownika"),
         "usernameCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "Nazwa użytkownika nie może być pusta"),
         "usernameIsTooShort": MessageLookupByLibrary.simpleMessage(
-            "Nazwa użytkownika jest za krótka")
+            "Nazwa użytkownika jest za krótka"),
+        "yourArticleIsNowVisible": MessageLookupByLibrary.simpleMessage(
+            "Twój artykuł jest już widoczny dla innych użytkowników!")
       };
 }
