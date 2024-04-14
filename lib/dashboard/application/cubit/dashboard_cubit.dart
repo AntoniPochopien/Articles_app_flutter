@@ -28,10 +28,20 @@ class DashboardCubit extends Cubit<DashboardState> {
           morePagesLoading: true,
           actualPage: value.actualPage));
       final response = await _dashboardRepository.getArticles(page);
-      response.fold(
-          (l) => emit(DashboardState.error(l)),
-          (articles) => DashboardState.data(
-              articles: articles, morePagesLoading: false, actualPage: page));
+      response.fold((l) => emit(DashboardState.error(l)), (newArticles) {
+        if (newArticles.isNotEmpty) {
+          final articles = List<Article>.from(value.articles);
+          emit(DashboardState.data(
+              articles: articles..addAll(newArticles),
+              morePagesLoading: false,
+              actualPage: page));
+        } else {
+          emit(DashboardState.data(
+              articles: value.articles,
+              morePagesLoading: false,
+              actualPage: value.actualPage));
+        }
+      });
     });
   }
 }

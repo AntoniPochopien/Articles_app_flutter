@@ -29,18 +29,19 @@ class _TileImagesViewState extends State<TileImagesView> {
               child: Image.network('${Api.url}/$e')))
         ],
       ),
-      Align(
-        alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 4),
-          child: SmoothPageIndicator(
-            controller: _pageController,
-            count: widget.imagesUrl.length,
-            effect: const ScrollingDotsEffect(
-                dotHeight: _dotSize, dotWidth: _dotSize),
+      if (widget.imagesUrl.length > 1)
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 4),
+            child: SmoothPageIndicator(
+              controller: _pageController,
+              count: widget.imagesUrl.length,
+              effect: const ScrollingDotsEffect(
+                  dotHeight: _dotSize, dotWidth: _dotSize),
+            ),
           ),
-        ),
-      )
+        )
     ]);
   }
 }

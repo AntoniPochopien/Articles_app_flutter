@@ -35,7 +35,7 @@ class ArticleTile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(Dim.allPadding),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
                     article.title,
