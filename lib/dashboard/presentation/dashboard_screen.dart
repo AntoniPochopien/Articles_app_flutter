@@ -45,6 +45,8 @@ class DashboardScreen extends StatelessWidget {
                     actualPage: value.actualPage,
                     articles: value.articles,
                     morePagesLoading: value.morePagesLoading,
+                    deletingInProgressArticleIds:
+                        value.deletingInProgressArticleIds,
                   )),
         ),
       ),

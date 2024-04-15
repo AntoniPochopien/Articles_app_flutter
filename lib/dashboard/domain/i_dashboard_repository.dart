@@ -4,4 +4,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class IDashboardRepository {
   Future<Either<Failure, List<Article>>> getArticles(int page);
+  Future<Either<Failure, Unit>> removeArticle(int articleId);
 }

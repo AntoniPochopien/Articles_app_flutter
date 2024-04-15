@@ -5,6 +5,8 @@ import 'package:articles_app_flutter/dashboard/application/cubit/dashboard_cubit
 import 'package:articles_app_flutter/di.dart';
 import 'package:articles_app_flutter/domain/authenticated_user.dart';
 import 'package:articles_app_flutter/l10n/l10n.dart';
+import 'package:articles_app_flutter/navigation/app_router.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,16 +31,11 @@ class DashboardDrawer extends StatelessWidget {
                       style: Font.h2DarkBold),
                 ],
               ),
-              Column(children: [
-                Button(
-                  text: T.addArticle,
-                  fullWidth: true,
-                ),
-                Button(
-                  text: T.yourArticles,
-                  fullWidth: true,
-                )
-              ]),
+              Button(
+                text: T.addArticle,
+                fullWidth: true,
+                onPressed: () => context.pushRoute(const AddArticleRoute()),
+              ),
               Button(
                 text: T.logout,
                 backgroundColor: Colors.red,

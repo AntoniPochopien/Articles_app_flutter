@@ -11,6 +11,7 @@ class Article with _$Article {
     required String title,
     required String content,
     required String owner,
+    required String ownerId,
     required List<String> images,
   }) = _Article;
 
@@ -19,5 +20,6 @@ class Article with _$Article {
       title: json['title'],
       content: json['content'],
       owner: json['owner']['username'],
+      ownerId: json['owner']['id'],
       images: (json['images'] as List).map((e) => e.toString()).toList());
 }

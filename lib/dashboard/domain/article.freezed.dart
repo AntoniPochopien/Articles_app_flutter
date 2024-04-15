@@ -20,6 +20,7 @@ mixin _$Article {
   String get title => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   String get owner => throw _privateConstructorUsedError;
+  String get ownerId => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -36,6 +37,7 @@ abstract class $ArticleCopyWith<$Res> {
       String title,
       String content,
       String owner,
+      String ownerId,
       List<String> images});
 }
 
@@ -56,6 +58,7 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
     Object? title = null,
     Object? content = null,
     Object? owner = null,
+    Object? ownerId = null,
     Object? images = null,
   }) {
     return _then(_value.copyWith(
@@ -74,6 +77,10 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
       owner: null == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       images: null == images
           ? _value.images
@@ -95,6 +102,7 @@ abstract class _$$ArticleImplCopyWith<$Res> implements $ArticleCopyWith<$Res> {
       String title,
       String content,
       String owner,
+      String ownerId,
       List<String> images});
 }
 
@@ -113,6 +121,7 @@ class __$$ArticleImplCopyWithImpl<$Res>
     Object? title = null,
     Object? content = null,
     Object? owner = null,
+    Object? ownerId = null,
     Object? images = null,
   }) {
     return _then(_$ArticleImpl(
@@ -132,6 +141,10 @@ class __$$ArticleImplCopyWithImpl<$Res>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as String,
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
       images: null == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
@@ -148,6 +161,7 @@ class _$ArticleImpl extends _Article {
       required this.title,
       required this.content,
       required this.owner,
+      required this.ownerId,
       required final List<String> images})
       : _images = images,
         super._();
@@ -160,6 +174,8 @@ class _$ArticleImpl extends _Article {
   final String content;
   @override
   final String owner;
+  @override
+  final String ownerId;
   final List<String> _images;
   @override
   List<String> get images {
@@ -170,7 +186,7 @@ class _$ArticleImpl extends _Article {
 
   @override
   String toString() {
-    return 'Article(id: $id, title: $title, content: $content, owner: $owner, images: $images)';
+    return 'Article(id: $id, title: $title, content: $content, owner: $owner, ownerId: $ownerId, images: $images)';
   }
 
   @override
@@ -182,12 +198,13 @@ class _$ArticleImpl extends _Article {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, title, content, owner,
-      const DeepCollectionEquality().hash(_images));
+      ownerId, const DeepCollectionEquality().hash(_images));
 
   @JsonKey(ignore: true)
   @override
@@ -202,6 +219,7 @@ abstract class _Article extends Article {
       required final String title,
       required final String content,
       required final String owner,
+      required final String ownerId,
       required final List<String> images}) = _$ArticleImpl;
   const _Article._() : super._();
 
@@ -213,6 +231,8 @@ abstract class _Article extends Article {
   String get content;
   @override
   String get owner;
+  @override
+  String get ownerId;
   @override
   List<String> get images;
   @override

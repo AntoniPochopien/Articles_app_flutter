@@ -9,12 +9,15 @@ class ArticlesList extends StatefulWidget {
   final List<Article> articles;
   final int actualPage;
   final bool morePagesLoading;
+  final List<int> deletingInProgressArticleIds;
 
-  const ArticlesList(
-      {super.key,
-      required this.articles,
-      required this.actualPage,
-      required this.morePagesLoading});
+  const ArticlesList({
+    super.key,
+    required this.articles,
+    required this.actualPage,
+    required this.morePagesLoading,
+    required this.deletingInProgressArticleIds,
+  });
 
   @override
   State<ArticlesList> createState() => _ArticlesListState();
@@ -54,8 +57,11 @@ class _ArticlesListState extends State<ArticlesList> {
             child: ListView.builder(
               controller: _scrollController,
               itemCount: widget.articles.length,
-              itemBuilder: (context, index) =>
-                  ArticleTile(article: widget.articles[index]),
+              itemBuilder: (context, index) => ArticleTile(
+                article: widget.articles[index],
+                deletionInProgress: widget.deletingInProgressArticleIds
+                    .contains(widget.articles[index].id),
+              ),
             ),
           ),
         ),

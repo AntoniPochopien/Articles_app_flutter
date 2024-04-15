@@ -45,6 +45,31 @@ class DashboardCubit extends Cubit<DashboardState> {
     });
   }
 
+  void deleteArticle(int id) async {
+    state.mapOrNull(
+      data: (value) async {
+        final deletingInProgressArticleIds =
+            List<int>.from(value.deletingInProgressArticleIds)..add(id);
+        emit(DashboardState.data(
+            articles: value.articles,
+            morePagesLoading: value.morePagesLoading,
+            actualPage: value.actualPage,
+            deletingInProgressArticleIds: deletingInProgressArticleIds));
+        final response = await _dashboardRepository.removeArticle(id);
+        response.fold((l) => emit(DashboardState.error(l)), (r) {
+          final x = deletingInProgressArticleIds..remove(id);
+          final newArticles = List<Article>.from(value.articles)
+            ..removeWhere((element) => element.id == id);
+          emit(DashboardState.data(
+              articles: newArticles,
+              morePagesLoading: value.morePagesLoading,
+              actualPage: value.actualPage,
+              deletingInProgressArticleIds: x));
+        });
+      },
+    );
+  }
+
   void logout() {
     emit(const DashboardState.logout());
   }

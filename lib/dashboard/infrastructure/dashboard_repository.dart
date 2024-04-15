@@ -33,4 +33,18 @@ class DashboardRepository implements IDashboardRepository {
       return left(const Failure.unexpected());
     }
   }
+
+  @override
+  Future<Either<Failure, Unit>> removeArticle(int articleId) async {
+    try {
+      final response = await http.delete(
+          Uri.parse('${Api.url}/articles?id=$articleId'),
+          headers: Api.headers(token: _authenticatedUser.user.accessToken));
+      return ErrorHalnder.getFailureFromStatusCode(
+          statusCode: response.statusCode, source: 'removeArticle');
+    } catch (e) {
+      log('removeArticle error: $e');
+      return left(const Failure.unexpected());
+    }
+  }
 }
