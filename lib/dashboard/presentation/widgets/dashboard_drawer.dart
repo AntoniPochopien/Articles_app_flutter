@@ -2,13 +2,14 @@ import 'package:articles_app_flutter/common/constants/dim.dart';
 import 'package:articles_app_flutter/common/constants/font.dart';
 import 'package:articles_app_flutter/common/widgets/button.dart';
 import 'package:articles_app_flutter/dashboard/application/cubit/dashboard_cubit.dart';
+import 'package:articles_app_flutter/di.dart';
+import 'package:articles_app_flutter/domain/authenticated_user.dart';
 import 'package:articles_app_flutter/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DashboardDrawer extends StatelessWidget {
-  final String username;
-  const DashboardDrawer({super.key, required this.username});
+  const DashboardDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,8 @@ class DashboardDrawer extends StatelessWidget {
                 children: [
                   const Icon(Icons.person),
                   const SizedBox(width: 4),
-                  Text(username, style: Font.h2DarkBold),
+                  Text(getIt<AuthenticatedUser>().user.username,
+                      style: Font.h2DarkBold),
                 ],
               ),
               Column(children: [

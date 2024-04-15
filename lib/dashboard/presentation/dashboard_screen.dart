@@ -32,7 +32,7 @@ class DashboardScreen extends StatelessWidget {
             child: const Icon(Icons.add),
             onPressed: () => context.pushRoute(const AddArticleRoute()),
           ),
-          endDrawer: const DashboardDrawer(username: 'sdasda'),
+          endDrawer: const DashboardDrawer(),
           body: state.maybeMap(
               orElse: () => const Center(child: CircularProgressIndicator()),
               error: (value) => Center(
