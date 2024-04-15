@@ -19,8 +19,12 @@ mixin _$DashboardState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)
+    required TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)
         data,
     required TResult Function() loading,
     required TResult Function() logout,
@@ -30,8 +34,12 @@ mixin _$DashboardState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult? Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult? Function()? loading,
     TResult? Function()? logout,
@@ -41,8 +49,12 @@ mixin _$DashboardState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult Function()? loading,
     TResult Function()? logout,
@@ -137,8 +149,12 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)
+    required TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)
         data,
     required TResult Function() loading,
     required TResult Function() logout,
@@ -151,8 +167,12 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult? Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult? Function()? loading,
     TResult? Function()? logout,
@@ -165,8 +185,12 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult Function()? loading,
     TResult Function()? logout,
@@ -234,7 +258,8 @@ abstract class _$$DataImplCopyWith<$Res> {
       {List<Article> articles,
       bool morePagesLoading,
       int actualPage,
-      List<int> deletingInProgressArticleIds});
+      List<int> deletingInProgressArticleIds,
+      Filters selectedFilter});
 }
 
 /// @nodoc
@@ -251,6 +276,7 @@ class __$$DataImplCopyWithImpl<$Res>
     Object? morePagesLoading = null,
     Object? actualPage = null,
     Object? deletingInProgressArticleIds = null,
+    Object? selectedFilter = freezed,
   }) {
     return _then(_$DataImpl(
       articles: null == articles
@@ -269,6 +295,10 @@ class __$$DataImplCopyWithImpl<$Res>
           ? _value._deletingInProgressArticleIds
           : deletingInProgressArticleIds // ignore: cast_nullable_to_non_nullable
               as List<int>,
+      selectedFilter: freezed == selectedFilter
+          ? _value.selectedFilter
+          : selectedFilter // ignore: cast_nullable_to_non_nullable
+              as Filters,
     ));
   }
 }
@@ -280,7 +310,8 @@ class _$DataImpl implements _Data {
       {required final List<Article> articles,
       required this.morePagesLoading,
       required this.actualPage,
-      final List<int> deletingInProgressArticleIds = const []})
+      final List<int> deletingInProgressArticleIds = const [],
+      this.selectedFilter = Filters.all})
       : _articles = articles,
         _deletingInProgressArticleIds = deletingInProgressArticleIds;
 
@@ -307,8 +338,12 @@ class _$DataImpl implements _Data {
   }
 
   @override
+  @JsonKey()
+  final Filters selectedFilter;
+
+  @override
   String toString() {
-    return 'DashboardState.data(articles: $articles, morePagesLoading: $morePagesLoading, actualPage: $actualPage, deletingInProgressArticleIds: $deletingInProgressArticleIds)';
+    return 'DashboardState.data(articles: $articles, morePagesLoading: $morePagesLoading, actualPage: $actualPage, deletingInProgressArticleIds: $deletingInProgressArticleIds, selectedFilter: $selectedFilter)';
   }
 
   @override
@@ -323,7 +358,9 @@ class _$DataImpl implements _Data {
                 other.actualPage == actualPage) &&
             const DeepCollectionEquality().equals(
                 other._deletingInProgressArticleIds,
-                _deletingInProgressArticleIds));
+                _deletingInProgressArticleIds) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedFilter, selectedFilter));
   }
 
   @override
@@ -332,7 +369,8 @@ class _$DataImpl implements _Data {
       const DeepCollectionEquality().hash(_articles),
       morePagesLoading,
       actualPage,
-      const DeepCollectionEquality().hash(_deletingInProgressArticleIds));
+      const DeepCollectionEquality().hash(_deletingInProgressArticleIds),
+      const DeepCollectionEquality().hash(selectedFilter));
 
   @JsonKey(ignore: true)
   @override
@@ -344,38 +382,50 @@ class _$DataImpl implements _Data {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)
+    required TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)
         data,
     required TResult Function() loading,
     required TResult Function() logout,
     required TResult Function(Failure reason) error,
   }) {
-    return data(
-        articles, morePagesLoading, actualPage, deletingInProgressArticleIds);
+    return data(articles, morePagesLoading, actualPage,
+        deletingInProgressArticleIds, selectedFilter);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult? Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult? Function()? loading,
     TResult? Function()? logout,
     TResult? Function(Failure reason)? error,
   }) {
-    return data?.call(
-        articles, morePagesLoading, actualPage, deletingInProgressArticleIds);
+    return data?.call(articles, morePagesLoading, actualPage,
+        deletingInProgressArticleIds, selectedFilter);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult Function()? loading,
     TResult Function()? logout,
@@ -383,8 +433,8 @@ class _$DataImpl implements _Data {
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(
-          articles, morePagesLoading, actualPage, deletingInProgressArticleIds);
+      return data(articles, morePagesLoading, actualPage,
+          deletingInProgressArticleIds, selectedFilter);
     }
     return orElse();
   }
@@ -435,12 +485,14 @@ abstract class _Data implements DashboardState {
       {required final List<Article> articles,
       required final bool morePagesLoading,
       required final int actualPage,
-      final List<int> deletingInProgressArticleIds}) = _$DataImpl;
+      final List<int> deletingInProgressArticleIds,
+      final Filters selectedFilter}) = _$DataImpl;
 
   List<Article> get articles;
   bool get morePagesLoading;
   int get actualPage;
   List<int> get deletingInProgressArticleIds;
+  Filters get selectedFilter;
   @JsonKey(ignore: true)
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -485,8 +537,12 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)
+    required TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)
         data,
     required TResult Function() loading,
     required TResult Function() logout,
@@ -499,8 +555,12 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult? Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult? Function()? loading,
     TResult? Function()? logout,
@@ -513,8 +573,12 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult Function()? loading,
     TResult Function()? logout,
@@ -611,8 +675,12 @@ class _$logoutImpl implements _logout {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)
+    required TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)
         data,
     required TResult Function() loading,
     required TResult Function() logout,
@@ -625,8 +693,12 @@ class _$logoutImpl implements _logout {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult? Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult? Function()? loading,
     TResult? Function()? logout,
@@ -639,8 +711,12 @@ class _$logoutImpl implements _logout {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult Function()? loading,
     TResult Function()? logout,
@@ -773,8 +849,12 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)
+    required TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)
         data,
     required TResult Function() loading,
     required TResult Function() logout,
@@ -787,8 +867,12 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult? Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult? Function()? loading,
     TResult? Function()? logout,
@@ -801,8 +885,12 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Article> articles, bool morePagesLoading,
-            int actualPage, List<int> deletingInProgressArticleIds)?
+    TResult Function(
+            List<Article> articles,
+            bool morePagesLoading,
+            int actualPage,
+            List<int> deletingInProgressArticleIds,
+            Filters selectedFilter)?
         data,
     TResult Function()? loading,
     TResult Function()? logout,

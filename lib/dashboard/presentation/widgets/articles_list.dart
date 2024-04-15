@@ -1,6 +1,7 @@
 import 'package:articles_app_flutter/common/constants/dim.dart';
 import 'package:articles_app_flutter/dashboard/application/cubit/dashboard_cubit.dart';
 import 'package:articles_app_flutter/dashboard/domain/article.dart';
+import 'package:articles_app_flutter/dashboard/domain/filters.dart';
 import 'package:articles_app_flutter/dashboard/presentation/widgets/article_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,14 +11,15 @@ class ArticlesList extends StatefulWidget {
   final int actualPage;
   final bool morePagesLoading;
   final List<int> deletingInProgressArticleIds;
+  final Filters filter;
 
-  const ArticlesList({
-    super.key,
-    required this.articles,
-    required this.actualPage,
-    required this.morePagesLoading,
-    required this.deletingInProgressArticleIds,
-  });
+  const ArticlesList(
+      {super.key,
+      required this.articles,
+      required this.actualPage,
+      required this.morePagesLoading,
+      required this.deletingInProgressArticleIds,
+      required this.filter});
 
   @override
   State<ArticlesList> createState() => _ArticlesListState();
@@ -42,7 +44,9 @@ class _ArticlesListState extends State<ArticlesList> {
   void _scrollListener() {
     if (_scrollController.position.pixels ==
         _scrollController.position.maxScrollExtent) {
-      context.read<DashboardCubit>().loadMoreArticles(widget.actualPage + 1);
+      context
+          .read<DashboardCubit>()
+          .loadMoreArticles(page: widget.actualPage + 1, filter: widget.filter);
     }
   }
 
@@ -53,9 +57,11 @@ class _ArticlesListState extends State<ArticlesList> {
       child: Column(children: [
         Expanded(
           child: RefreshIndicator(
-            onRefresh: () async => context.read<DashboardCubit>().fetchData(),
+            onRefresh: () async =>
+                context.read<DashboardCubit>().fetchData(widget.filter),
             child: ListView.builder(
               controller: _scrollController,
+              physics: const AlwaysScrollableScrollPhysics(),
               itemCount: widget.articles.length,
               itemBuilder: (context, index) => ArticleTile(
                 article: widget.articles[index],

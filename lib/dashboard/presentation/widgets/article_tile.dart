@@ -44,7 +44,7 @@ class ArticleTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    article.id.toString(),
+                    article.title,
                     style: Font.h2DarkBold,
                   ),
                   Text(normalizeContent(article.content)),
