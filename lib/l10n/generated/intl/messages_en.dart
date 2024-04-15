@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "articleContent":
             MessageLookupByLibrary.simpleMessage("Article content..."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "nowLogIn": MessageLookupByLibrary.simpleMessage(
             "Now log in using the same details"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -43,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Registered successfully"),
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("Repeat password"),
+        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "successfullyPublished":
             MessageLookupByLibrary.simpleMessage("Successfully published"),
         "theUsernameIsAlreadyTaken": MessageLookupByLibrary.simpleMessage(
@@ -55,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "usernameIsTooShort":
             MessageLookupByLibrary.simpleMessage("Username is too short"),
         "yourArticleIsNowVisible": MessageLookupByLibrary.simpleMessage(
-            "Your article is now visible to other users!")
+            "Your article is now visible to other users!"),
+        "yourArticles": MessageLookupByLibrary.simpleMessage("Your articles")
       };
 }

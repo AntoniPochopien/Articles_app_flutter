@@ -22,11 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "addArticle": MessageLookupByLibrary.simpleMessage("Dodaj artykuł"),
+        "addArticle": MessageLookupByLibrary.simpleMessage("Add article"),
         "appName": MessageLookupByLibrary.simpleMessage("Articles"),
         "articleContent":
             MessageLookupByLibrary.simpleMessage("Treść artykułu..."),
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "nowLogIn": MessageLookupByLibrary.simpleMessage(
             "Teraz zaloguj się używając tych samych danych"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -42,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registeredSuccessfully":
             MessageLookupByLibrary.simpleMessage("Zarejestrowano pomyślnie"),
         "repeatPassword": MessageLookupByLibrary.simpleMessage("Powtórz hasło"),
+        "retry": MessageLookupByLibrary.simpleMessage("Spróbuj ponownie"),
         "successfullyPublished":
             MessageLookupByLibrary.simpleMessage("Pomyślnie opublikowano"),
         "theUsernameIsAlreadyTaken": MessageLookupByLibrary.simpleMessage(
@@ -54,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "usernameIsTooShort": MessageLookupByLibrary.simpleMessage(
             "Nazwa użytkownika jest za krótka"),
         "yourArticleIsNowVisible": MessageLookupByLibrary.simpleMessage(
-            "Twój artykuł jest już widoczny dla innych użytkowników!")
+            "Twój artykuł jest już widoczny dla innych użytkowników!"),
+        "yourArticles": MessageLookupByLibrary.simpleMessage("Your articles")
       };
 }

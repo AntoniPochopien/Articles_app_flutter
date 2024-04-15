@@ -44,4 +44,8 @@ class DashboardCubit extends Cubit<DashboardState> {
       });
     });
   }
+
+  void logout() {
+    emit(const DashboardState.logout());
+  }
 }

@@ -20,5 +20,9 @@
     "ok":"Ok",
     "publish":"Opublikuj",
     "titleOfTheArticle":"Tytuł artykułu",
-    "articleContent":"Treść artykułu..."
+    "articleContent":"Treść artykułu...",
+    "retry":"Spróbuj ponownie",
+    "addArticle":"Add article",
+    "yourArticles":"Your articles",
+    "logout":"Logout"
 }

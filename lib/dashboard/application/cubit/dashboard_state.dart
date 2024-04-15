@@ -8,5 +8,6 @@ class DashboardState with _$DashboardState {
       required bool morePagesLoading,
       required int actualPage}) = _Data;
   const factory DashboardState.loading() = _Loading;
+  const factory DashboardState.logout() = _logout;
   const factory DashboardState.error(Failure reason) = _Error;
 }

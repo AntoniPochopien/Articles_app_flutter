@@ -23,6 +23,7 @@ mixin _$DashboardState {
             List<Article> articles, bool morePagesLoading, int actualPage)
         data,
     required TResult Function() loading,
+    required TResult Function() logout,
     required TResult Function(Failure reason) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,6 +34,7 @@ mixin _$DashboardState {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult? Function()? loading,
+    TResult? Function()? logout,
     TResult? Function(Failure reason)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ mixin _$DashboardState {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult Function()? loading,
+    TResult Function()? logout,
     TResult Function(Failure reason)? error,
     required TResult orElse(),
   }) =>
@@ -52,6 +55,7 @@ mixin _$DashboardState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Data value) data,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_logout value) logout,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +64,7 @@ mixin _$DashboardState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Data value)? data,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_logout value)? logout,
     TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +73,7 @@ mixin _$DashboardState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
+    TResult Function(_logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -135,6 +141,7 @@ class _$InitialImpl implements _Initial {
             List<Article> articles, bool morePagesLoading, int actualPage)
         data,
     required TResult Function() loading,
+    required TResult Function() logout,
     required TResult Function(Failure reason) error,
   }) {
     return initial();
@@ -148,6 +155,7 @@ class _$InitialImpl implements _Initial {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult? Function()? loading,
+    TResult? Function()? logout,
     TResult? Function(Failure reason)? error,
   }) {
     return initial?.call();
@@ -161,6 +169,7 @@ class _$InitialImpl implements _Initial {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult Function()? loading,
+    TResult Function()? logout,
     TResult Function(Failure reason)? error,
     required TResult orElse(),
   }) {
@@ -176,6 +185,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Data value) data,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_logout value) logout,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -187,6 +197,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Data value)? data,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -198,6 +209,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
+    TResult Function(_logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -312,6 +324,7 @@ class _$DataImpl implements _Data {
             List<Article> articles, bool morePagesLoading, int actualPage)
         data,
     required TResult Function() loading,
+    required TResult Function() logout,
     required TResult Function(Failure reason) error,
   }) {
     return data(articles, morePagesLoading, actualPage);
@@ -325,6 +338,7 @@ class _$DataImpl implements _Data {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult? Function()? loading,
+    TResult? Function()? logout,
     TResult? Function(Failure reason)? error,
   }) {
     return data?.call(articles, morePagesLoading, actualPage);
@@ -338,6 +352,7 @@ class _$DataImpl implements _Data {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult Function()? loading,
+    TResult Function()? logout,
     TResult Function(Failure reason)? error,
     required TResult orElse(),
   }) {
@@ -353,6 +368,7 @@ class _$DataImpl implements _Data {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Data value) data,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_logout value) logout,
     required TResult Function(_Error value) error,
   }) {
     return data(this);
@@ -364,6 +380,7 @@ class _$DataImpl implements _Data {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Data value)? data,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
     return data?.call(this);
@@ -375,6 +392,7 @@ class _$DataImpl implements _Data {
     TResult Function(_Initial value)? initial,
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
+    TResult Function(_logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -442,6 +460,7 @@ class _$LoadingImpl implements _Loading {
             List<Article> articles, bool morePagesLoading, int actualPage)
         data,
     required TResult Function() loading,
+    required TResult Function() logout,
     required TResult Function(Failure reason) error,
   }) {
     return loading();
@@ -455,6 +474,7 @@ class _$LoadingImpl implements _Loading {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult? Function()? loading,
+    TResult? Function()? logout,
     TResult? Function(Failure reason)? error,
   }) {
     return loading?.call();
@@ -468,6 +488,7 @@ class _$LoadingImpl implements _Loading {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult Function()? loading,
+    TResult Function()? logout,
     TResult Function(Failure reason)? error,
     required TResult orElse(),
   }) {
@@ -483,6 +504,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Data value) data,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_logout value) logout,
     required TResult Function(_Error value) error,
   }) {
     return loading(this);
@@ -494,6 +516,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Data value)? data,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
@@ -505,6 +528,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
+    TResult Function(_logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -517,6 +541,132 @@ class _$LoadingImpl implements _Loading {
 
 abstract class _Loading implements DashboardState {
   const factory _Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$logoutImplCopyWith<$Res> {
+  factory _$$logoutImplCopyWith(
+          _$logoutImpl value, $Res Function(_$logoutImpl) then) =
+      __$$logoutImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$logoutImplCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res, _$logoutImpl>
+    implements _$$logoutImplCopyWith<$Res> {
+  __$$logoutImplCopyWithImpl(
+      _$logoutImpl _value, $Res Function(_$logoutImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$logoutImpl implements _logout {
+  const _$logoutImpl();
+
+  @override
+  String toString() {
+    return 'DashboardState.logout()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$logoutImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(
+            List<Article> articles, bool morePagesLoading, int actualPage)
+        data,
+    required TResult Function() loading,
+    required TResult Function() logout,
+    required TResult Function(Failure reason) error,
+  }) {
+    return logout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(
+            List<Article> articles, bool morePagesLoading, int actualPage)?
+        data,
+    TResult? Function()? loading,
+    TResult? Function()? logout,
+    TResult? Function(Failure reason)? error,
+  }) {
+    return logout?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(
+            List<Article> articles, bool morePagesLoading, int actualPage)?
+        data,
+    TResult Function()? loading,
+    TResult Function()? logout,
+    TResult Function(Failure reason)? error,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Data value) data,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_logout value) logout,
+    required TResult Function(_Error value) error,
+  }) {
+    return logout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_logout value)? logout,
+    TResult? Function(_Error value)? error,
+  }) {
+    return logout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Data value)? data,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_logout value)? logout,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _logout implements DashboardState {
+  const factory _logout() = _$logoutImpl;
 }
 
 /// @nodoc
@@ -598,6 +748,7 @@ class _$ErrorImpl implements _Error {
             List<Article> articles, bool morePagesLoading, int actualPage)
         data,
     required TResult Function() loading,
+    required TResult Function() logout,
     required TResult Function(Failure reason) error,
   }) {
     return error(reason);
@@ -611,6 +762,7 @@ class _$ErrorImpl implements _Error {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult? Function()? loading,
+    TResult? Function()? logout,
     TResult? Function(Failure reason)? error,
   }) {
     return error?.call(reason);
@@ -624,6 +776,7 @@ class _$ErrorImpl implements _Error {
             List<Article> articles, bool morePagesLoading, int actualPage)?
         data,
     TResult Function()? loading,
+    TResult Function()? logout,
     TResult Function(Failure reason)? error,
     required TResult orElse(),
   }) {
@@ -639,6 +792,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Data value) data,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_logout value) logout,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -650,6 +804,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Data value)? data,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -661,6 +816,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Data value)? data,
     TResult Function(_Loading value)? loading,
+    TResult Function(_logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
