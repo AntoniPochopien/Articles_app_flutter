@@ -27,6 +27,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AppStartupScreen(),
       );
     },
+    ArticleDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<ArticleDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ArticleDetailsScreen(
+          key: args.key,
+          article: args.article,
+        ),
+      );
+    },
     AuthRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -68,6 +78,44 @@ class AppStartupRoute extends PageRouteInfo<void> {
   static const String name = 'AppStartupRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ArticleDetailsScreen]
+class ArticleDetailsRoute extends PageRouteInfo<ArticleDetailsRouteArgs> {
+  ArticleDetailsRoute({
+    Key? key,
+    required Article article,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ArticleDetailsRoute.name,
+          args: ArticleDetailsRouteArgs(
+            key: key,
+            article: article,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ArticleDetailsRoute';
+
+  static const PageInfo<ArticleDetailsRouteArgs> page =
+      PageInfo<ArticleDetailsRouteArgs>(name);
+}
+
+class ArticleDetailsRouteArgs {
+  const ArticleDetailsRouteArgs({
+    this.key,
+    required this.article,
+  });
+
+  final Key? key;
+
+  final Article article;
+
+  @override
+  String toString() {
+    return 'ArticleDetailsRouteArgs{key: $key, article: $article}';
+  }
 }
 
 /// generated route for

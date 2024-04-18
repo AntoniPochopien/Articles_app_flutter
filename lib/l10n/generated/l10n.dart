@@ -289,6 +289,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Published by:`
+  String get publishedBy {
+    return Intl.message(
+      'Published by:',
+      name: 'publishedBy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

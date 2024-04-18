@@ -4,4 +4,5 @@ class Dim {
   static const horizontalPadding = 8.0;
   static const allPadding = 8.0;
   static const radius = 12.0;
+  static const dotSize = 10.0;
 }

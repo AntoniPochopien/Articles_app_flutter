@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordsMustBeTheSame":
             MessageLookupByLibrary.simpleMessage("Passwords must be the same"),
         "publish": MessageLookupByLibrary.simpleMessage("Publish"),
+        "publishedBy": MessageLookupByLibrary.simpleMessage("Published by:"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registeredSuccessfully":
             MessageLookupByLibrary.simpleMessage("Registered successfully"),

@@ -24,5 +24,6 @@
     "retry":"Spróbuj ponownie",
     "addArticle":"Add article",
     "yourArticles":"Your articles",
-    "logout":"Logout"
+    "logout":"Logout",
+    "publishedBy":"Opublikował:"
 }

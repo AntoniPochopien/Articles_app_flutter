@@ -14,7 +14,6 @@ class TileImagesView extends StatefulWidget {
 
 class _TileImagesViewState extends State<TileImagesView> {
   final _pageController = PageController();
-  static const _dotSize = 10.0;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,7 @@ class _TileImagesViewState extends State<TileImagesView> {
               controller: _pageController,
               count: widget.imagesUrl.length,
               effect: const ScrollingDotsEffect(
-                  dotHeight: _dotSize, dotWidth: _dotSize),
+                  dotHeight: Dim.dotSize, dotWidth: Dim.dotSize),
             ),
           ),
         )
