@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 
 class ErrorHalnder {
   static Either<Failure, Unit> getFailureFromStatusCode(
-      {required int statusCode, required String source, String? data}) {
+      {required int statusCode, required String source}) {
     log('$source ${statusCode > 399 ? 'error' : 'success'}, statusCode: $statusCode');
     if (statusCode == 200 ||
         statusCode == 201 ||
