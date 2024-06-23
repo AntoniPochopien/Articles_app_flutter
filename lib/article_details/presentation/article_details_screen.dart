@@ -7,7 +7,6 @@ import 'package:articles_app_flutter/dashboard/domain/article.dart';
 import 'package:articles_app_flutter/l10n/l10n.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
