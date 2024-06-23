@@ -54,7 +54,7 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
           Text.rich(
             TextSpan(children: [
               TextSpan(text: '${T.publishedBy} '),
-              TextSpan(text: widget.article.owner, style: Font.h5DarkBold)
+              TextSpan(text: widget.article.owner.username, style: Font.h5DarkBold)
             ]),
             textAlign: TextAlign.end,
           ),

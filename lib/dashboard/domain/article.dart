@@ -1,3 +1,4 @@
+import 'package:articles_app_flutter/common/models/simple_user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'article.freezed.dart';
@@ -10,8 +11,7 @@ class Article with _$Article {
     required int id,
     required String title,
     required String content,
-    required String owner,
-    required String ownerId,
+    required SimpleUser owner,
     required List<String> images,
   }) = _Article;
 
@@ -19,7 +19,9 @@ class Article with _$Article {
       id: json['id'],
       title: json['title'],
       content: json['content'],
-      owner: json['owner']['username'],
-      ownerId: json['owner']['id'],
+      owner: SimpleUser(
+        id: json['owner']['id'],
+        username: json['owner']['username'],
+      ),
       images: (json['images'] as List).map((e) => e.toString()).toList());
 }

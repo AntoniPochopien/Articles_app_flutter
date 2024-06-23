@@ -52,7 +52,7 @@ class ArticleTile extends StatelessWidget {
                       style: Font.h2DarkBold,
                     ),
                     Text(normalizeContent(article.content)),
-                    if (getIt<AuthenticatedUser>().user.id == article.ownerId)
+                    if (getIt<AuthenticatedUser>().user.id == article.owner.id)
                       deletionInProgress
                           ? const SizedBox(
                               width: 15,
